@@ -128,7 +128,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
 		+"\"update_count\":\""+ get(Fields.In, "更新カウント").getString(r) +"\","
 		+"\"view_count\":\""+ get(Fields.In, "ビューカウント").getString(r) +"\","
 		+"\"posted_location\": ["+ get(Fields.In, "緯度").getString(r)+"," +get(Fields.In, "経度").getString(r)+"]"
-		+"\"}\n";
+		+"}\n";
 
 
 		//取得したデータをbody（戻り値）に詰める
@@ -190,7 +190,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;Users&#x5c;ac12955&#x5c;Desktop&#x5c;SampleData.csv</filename>
+    <filename>C&#x3a;&#x5c;repos&#x5c;iotworkshop&#x5c;SampleData.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
