@@ -82,7 +82,6 @@
   <hop> <from>bulk insert</from><to>Write to log 2</to><enabled>Y</enabled> </hop>
   <hop> <from>bulk insert</from><to>REST Client</to><enabled>Y</enabled> </hop>
   <hop> <from>Add value fields changing sequence</from><to>bulk insert</to><enabled>Y</enabled> </hop>
-  <hop> <from>Add value fields changing sequence</from><to>Modified Java Script Value 2</to><enabled>N</enabled> </hop>
   </order>
   <step>
     <name>Add value fields changing sequence</name>
@@ -193,8 +192,8 @@
     <last_time_field>FiveSecondsAgo</last_time_field>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>87</xloc>
-      <yloc>134</yloc>
+      <xloc>111</xloc>
+      <yloc>259</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -232,84 +231,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>275</xloc>
       <yloc>311</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Modified Java Script Value 2</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var createdDate &#x3d; new Date&#x28;&#x27;1978&#x2f;05&#x2f;11&#x27;&#x29;&#x3b;&#xa;createdDate.setDate&#x28;Math.random&#x28;&#x29; &#x2a; 10000 &#x29;&#x3b;&#xa;var price &#x3d; Math.random&#x28;&#x29; &#x2a; 10000&#x3b;&#xa;var url &#x3d; _url&#x2b;&#x22;megacorp&#x2f;employee&#x2f;&#x22;&#x2b;r_uuid&#xa;&#x2f;&#x2f;var url &#x3d; _url&#x2b;&#x22;megacorp&#x2f;employee&#x2f;_bulk&#x22;  &#x2f;&#x2f;bulk&#x30a4;&#x30f3;&#x30b5;&#x30fc;&#x30c8;&#x7528;&#xa;var groupCode &#x3d; getGroupCode&#x28;&#x29;&#xa;var fmat &#x3d;&#x22;YYYY&#x2f;MM&#x2f;DD hh&#x3a;mm&#x3a;ss&#x22;&#x3b;&#xa;&#xa;var body&#x3d;&#x22;&#x7b;&#x5c;&#x22;uuid&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b;r_uuid&#x2b;&#x22;&#x5c;&#x22;,&#x5c;&#x22;seqNumber&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b;seqNumber&#x2b;&#xa;	&#x22;&#x5c;&#x22;,&#x5c;&#x22;firstName&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b;name1&#x2b;&#x22;&#x5c;&#x22;,&#x5c;&#x22;&#x22;&#x2b;&#xa;&#x22;randomString&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b;r_string&#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xa;&#x22;&#x5c;&#x22;randomInt&#x5c;&#x22;&#x3a;&#x22;&#x2b;r_int&#x2b;&#x22;,&#x22;&#x2b;&#xa;&#x22;&#x5c;&#x22;groupCode&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b;groupCode&#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xa;	&#x22;&#x5c;&#x22;testDate&#x5c;&#x22;&#x3a;&#x5c;&#x22;2015&#x2f;10&#x2f;12 12&#x3a;01&#x3a;05&#x5c;&#x22;,&#x22;&#x2b;&#xa;	&#x22;&#x5c;&#x22;createdDate&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b;formatDate&#x28;createdDate,fmat&#x29;&#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xa;&#x2f;&#x2f;&#x22;&#x5c;&#x22;updatedDate&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b;formatDate&#x28;updatedDate,fmat&#x29;&#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xa;	&#x22;&#x5c;&#x22;price&#x5c;&#x22;&#x3a;&#x22;&#x2b;price&#x2b;&#x22;&#x7d;&#x22;&#x3b;&#xa;&#xa;var bulkBody&#x3d;&#x22;&#x7b;&#x5c;&#x22;create&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x7b;&#x5c;&#x22;_index&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b; r_uuid &#x2b; &#x22;&#x5c;&#x22;&#x7d;&#x7d;&#x5c;n&#x22;&#x2b;body&#x3b;&#xa;&#xa; function getGroupCode&#x28;&#x29;&#x7b;&#xa;	var rnum &#x3d; &#x28;Math.random&#x28;&#x29;&#x2a;1000&#x29;&#x25;10&#xa;	&#x2f;&#x2f;document.write&#x28;&#x22;Randam&#x3a;&#x22;&#x2b;rnum&#x29;&#x3b;&#xa;	if&#x28;rnum &#x3c; 1&#x29;&#x7b;&#xa;		return &#x22;A0001&#x22;&#x3b;&#xa;	&#x7d;else if&#x28;rnum&#x3c;2&#x29;&#x7b;&#xa;		return &#x22;A0002&#x22;&#x3b;&#xa;	&#x7d;else if&#x28;rnum&#x3c;5&#x29;&#x7b;&#xa;		return &#x22;A0005&#x22;&#x3b;&#xa;	&#x7d;&#xa;else if&#x28;rnum&#x3c;6&#x29;&#x7b;&#xa;		return &#x22;A0006&#x22;&#x3b;&#xa;	&#x7d;&#xa;else if&#x28;rnum&#x3c;7&#x29;&#x7b;&#xa;		return &#x22;A0007&#x22;&#x3b;&#xa;	&#x7d;&#xa;else if&#x28;rnum&#x3c;8&#x29;&#x7b;&#xa;		return &#x22;A0008&#x22;&#x3b;&#xa;	&#x7d;&#xa;else&#x7b;&#xa;	 return &#x22;A9999&#x22;&#x3b;&#xa;	&#x7d;&#xa;&#x7d;&#xa;&#x2f;&#x2a;&#x2a;&#xa; &#x2a; &#x65e5;&#x4ed8;&#x3092;&#x30d5;&#x30a9;&#x30fc;&#x30de;&#x30c3;&#x30c8;&#x3059;&#x308b;&#xa; &#x2a; &#x40;param  &#x7b;Date&#x7d;   date     &#x65e5;&#x4ed8;&#xa; &#x2a; &#x40;param  &#x7b;String&#x7d; &#x5b;format&#x5d; &#x30d5;&#x30a9;&#x30fc;&#x30de;&#x30c3;&#x30c8;&#xa; &#x2a; &#x40;return &#x7b;String&#x7d;          &#x30d5;&#x30a9;&#x30fc;&#x30de;&#x30c3;&#x30c8;&#x6e08;&#x307f;&#x65e5;&#x4ed8;&#xa; &#x2a;&#x2f;&#xa;function formatDate&#x28;date, format&#x29; &#x7b;&#xa;  if &#x28;&#x21;format&#x29; format &#x3d; &#x27;YYYY&#x2f;MM&#x2f;DD hh&#x3a;mm&#x3a;ss&#x27;&#x3b; &#x2f;&#x2f;.SSS&#x306f;&#x30c0;&#x30e1;&#x307f;&#x305f;&#x3044;&#x3002;&#xa;  format &#x3d; format.replace&#x28;&#x2f;YYYY&#x2f;g, date.getFullYear&#x28;&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;MM&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; &#x28;date.getMonth&#x28;&#x29; &#x2b; 1&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;DD&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getDate&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;hh&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getHours&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;mm&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getMinutes&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;ss&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getSeconds&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  if &#x28;format.match&#x28;&#x2f;S&#x2f;g&#x29;&#x29; &#x7b;&#xa;    var milliSeconds &#x3d; &#x28;&#x27;00&#x27; &#x2b; date.getMilliseconds&#x28;&#x29;&#x29;.slice&#x28;-3&#x29;&#x3b;&#xa;    var length &#x3d; format.match&#x28;&#x2f;S&#x2f;g&#x29;.length&#x3b;&#xa;    for &#x28;var i &#x3d; 0&#x3b; i &#x3c; length&#x3b; i&#x2b;&#x2b;&#x29; format &#x3d; format.replace&#x28;&#x2f;S&#x2f;, milliSeconds.substring&#x28;i, i &#x2b; 1&#x29;&#x29;&#x3b;&#xa;  &#x7d;&#xa;  return format&#x3b;&#xa;&#x7d;&#x3b;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>createdDate</name>
-        <rename>createdDate</rename>
-        <type>Date</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>price</name>
-        <rename>price</rename>
-        <type>Number</type>
-        <length>16</length>
-        <precision>2</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>url</name>
-        <rename>url</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>groupCode</name>
-        <rename>groupCode</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>fmat</name>
-        <rename>fmat</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>body</name>
-        <rename>body</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>bulkBody</name>
-        <rename>bulkBody</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>getGroupCode</name>
-        <rename>getGroupCode</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>formatDate</name>
-        <rename>formatDate</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>477</xloc>
-      <yloc>154</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -360,7 +281,7 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>764</xloc>
-      <yloc>279</yloc>
+      <yloc>300</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -453,7 +374,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var createdDate &#x3d; new Date&#x28;&#x27;1990&#x2f;05&#x2f;11&#x27;&#x29;&#x3b;&#xa;createdDate.setDate&#x28;Math.random&#x28;&#x29; &#x2a; 10000 &#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;var testDate &#x3d; new Date&#x28;&#x27;2000&#x2f;01&#x2f;01&#x27;&#x29;&#x3b;&#xd;&#xa;testDate.setDate&#x28;Math.random&#x28;&#x29; &#x2a; 5000 &#x29;&#x3b;&#xd;&#xa;&#xa;var price &#x3d; Math.random&#x28;&#x29; &#x2a; 10000&#x3b;&#xa;&#xa;var url &#x3d; _url&#x2b;&#x22;megacorp&#x2f;employee&#x2f;_bulk&#x22;&#xa;&#xa;var fmat &#x3d;&#x22;YYYY&#x2f;MM&#x2f;DD hh&#x3a;mm&#x3a;ss&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xa;var bulkBody&#x3d;createInsertStr&#x28;100&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;function getRandomInt&#x28;min, max&#x29; &#x7b;&#xd;&#xa;  return Math.floor&#x28; Math.random&#x28;&#x29; &#x2a; &#x28;max - min &#x2b; 1&#x29; &#x29; &#x2b; min&#x3b;&#xd;&#xa;&#x7d;&#xa;&#xd;&#xa;&#x2f;&#x2a;&#x2a;&#xd;&#xa; &#x2a; roopCount&#x5206;&#x3060;&#x3051;&#x3001;&#x540c;&#x3058;&#x6587;&#x5b57;&#x5217;&#x3092;&#x751f;&#x6210;&#x3059;&#x308b;&#x3002;&#xd;&#xa; &#x2a; return BulkInsert&#x6587;&#x5b57;&#x5217;&#xd;&#xa; &#x2a;&#x2f;&#xa;function createInsertStr&#x28; roopCount&#x29;&#x7b;&#xa;var bodyString &#x3d;&#x22;&#x22;&#x3b;&#xa; for&#x28;i&#x3d;0&#x3b;i&#x3c;roopCount&#x3b;i&#x2b;&#x2b;&#x29;&#x7b;&#xd;&#xa;	var body5 &#x3d; &#x22;&#x7b;&#x5c;&#x22;title_str&#x5c;&#x22;&#x3a; &#x5c;&#x22;&#x22;&#x2b;getTitle&#x28;&#x29;&#x2b;&#x22;&#x5c;&#x22;, &#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;body&#x5c;&#x22;&#x3a;  &#x5c;&#x22;&#x7c73;&#x98df;&#x54c1;&#x533b;&#x85ac;&#x54c1;&#x5c40;&#xff08;&#xff26;&#xff24;&#xff21;&#xff09;&#x306f;&#xff15;&#x65e5;&#x3001;&#x7c73;&#x56fd;&#x306e;&#x4e2d;&#x9ad8;&#x751f;&#x306e;&#x9593;&#x3067;&#x5229;&#x7528;&#x304c;&#x6025;&#x5897;&#x3057;&#x3066;&#x3044;&#x308b;&#x96fb;&#x5b50;&#x305f;&#x3070;&#x3053;&#x5c;&#x22;, &#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;user_id&#x5c;&#x22;&#x3a;  &#x5c;&#x22;&#x22;&#x2b;name1&#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;view_count&#x5c;&#x22; &#x3a; &#x22;&#x2b;getRandomInt&#x28;1, 1000&#x29;&#x2b;&#x22;,&#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;update_count&#x5c;&#x22;&#x3a; &#x22;&#x2b;getRandomInt&#x28;10, 10000&#x29;&#x2b;&#x22;,&#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;created_date&#x5c;&#x22;&#x3a; &#x5c;&#x22;&#x22;&#x2b;formatDate&#x28;createdDate,fmat&#x29;&#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;posted_location&#x5c;&#x22;&#x3a; &#x5b; &#x22;&#x2b;getRandomInt&#x28;100,115&#x29;&#x2b;&#x22;.129, 31.31 &#x5d; &#x7d;&#x22;&#x3b;&#xd;&#xa;&#xa;	bodyString &#x3d; bodyString&#x2b;&#x22;&#x7b;&#x5c;&#x22;update&#x5c;&#x22;&#x3a;&#x7b;&#x5c;&#x22;_id&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b; r_uuid&#x2b;i &#x2b; &#x22;&#x5c;&#x22;,&#x5c;&#x22;_retry_on_conflict&#x5c;&#x22;&#x3a;2&#x7d;&#x7d;&#x5c;n&#x22;&#xa;	&#x2b;&#x22;&#x7b;&#x5c;&#x22;doc&#x5c;&#x22;&#x3a;&#x22;&#x2b;body5&#x2b;&#x22;,&#x5c;&#x22;doc_as_upsert&#x5c;&#x22; &#x3a; true&#x7d;&#x5c;n&#x22;&#xa; &#x7d;&#xa; return bodyString&#x3b;&#xa;&#x7d;&#xa; &#xa; function getTitle&#x28;&#x29;&#x7b;&#xa;	var rnum &#x3d; &#x28;Math.random&#x28;&#x29;&#x2a;1000&#x29;&#x25;10&#xa;	&#x2f;&#x2f;document.write&#x28;&#x22;Randam&#x3a;&#x22;&#x2b;rnum&#x29;&#x3b;&#xa;	if&#x28;rnum &#x3c; 1&#x29;&#x7b;&#xa;		return &#x22;&#x96fb;&#x5b50;&#x305f;&#x3070;&#x3053;&#x3001;&#x7c73;&#x3067;&#xff11;&#xff18;&#x6b73;&#x672a;&#x6e80;&#x306b;&#x8ca9;&#x58f2;&#x7981;&#x6b62;&#x3078;&#x3000;&#x5229;&#x7528;&#x6025;&#x5897;&#x3067;&#x22;&#x3b;&#xa;	&#x7d;else if&#x28;rnum&#x3c;2&#x29;&#x7b;&#xa;		return &#x22;&#x6b69;&#x304d;&#x30b9;&#x30de;&#x30db;&#x3001;&#x6b7b;&#x306b;&#x81f3;&#x308b;&#x3053;&#x3068;&#x3082;&#x3000;&#x753b;&#x9762;&#x898b;&#x3066;&#x30a4;&#x30e4;&#x30db;&#x30f3;&#x2026;&#x8ee2;&#x843d;&#x22;&#x3b;&#xa;	&#x7d;else if&#x28;rnum&#x3c;5&#x29;&#x7b;&#xa;		return &#x22;&#x30ce;&#x30ad;&#x30a2;&#x3001;&#x643a;&#x5e2f;&#x5e02;&#x5834;&#x306b;&#x518d;&#x53c2;&#x5165;&#xff1d;&#x8001;&#x8217;&#x30d6;&#x30e9;&#x30f3;&#x30c9;&#x5b58;&#x7d9a;&#x3078;&#x22;&#x3b;&#xa;	&#x7d;&#xa;else if&#x28;rnum&#x3c;6&#x29;&#x7b;&#xa;		return &#x22;&#x30e8;&#x30fc;&#x30ed;&#x30c3;&#x30d1;&#x3067;&#x843d;&#x96f7;&#x88ab;&#x5bb3;&#x591a;&#x767a;&#x3000;&#x96f7;&#x304b;&#x3089;&#x8eab;&#x3092;&#x5b88;&#x308b;&#x306b;&#x306f;&#x22;&#x3b;&#xa;	&#x7d;&#xa;else if&#x28;rnum&#x3c;7&#x29;&#x7b;&#xa;		return &#x22;&#x30d5;&#x30e9;&#x30f3;&#x30b9;&#x306e;&#x30e6;&#x30c0;&#x30e4;&#x4eba;&#x56e3;&#x4f53;&#x3001;&#x30d8;&#x30a4;&#x30c8;&#x30b9;&#x30d4;&#x30fc;&#x30c1;&#x767a;&#x8a00;&#x306e;&#x7ba1;&#x7406;&#x3092;&#x3081;&#x3050;&#x3063;&#x3066;&#x30bd;&#x30fc;&#x30b7;&#x30e3;&#x30eb;&#x30e1;&#x30c7;&#x30a3;&#x30a2;&#x3092;&#x8a34;&#x3048;&#x22;&#x3b;&#xa;	&#x7d;&#xa;else if&#x28;rnum&#x3c;8&#x29;&#x7b;&#xa;		return &#x22;&#x30b9;&#x30de;&#x30db;&#x3084;&#x30bf;&#x30d6;&#x30ec;&#x30c3;&#x30c8;&#x3067;&#x624b;&#x8efd;&#x306b;&#x79d1;&#x5b66;&#x7684;&#x6e2c;&#x5b9a;&#x304c;&#x53ef;&#x80fd;&#x306b;&#x22;&#x3b;&#xa;	&#x7d;&#xa;else&#x7b;&#xa;	 return &#x22;A9999&#x22;&#x3b;&#xa;	&#x7d;&#xa;&#x7d;&#xa;&#x2f;&#x2a;&#x2a;&#xa; &#x2a; &#x65e5;&#x4ed8;&#x3092;&#x30d5;&#x30a9;&#x30fc;&#x30de;&#x30c3;&#x30c8;&#x3059;&#x308b;&#xa; &#x2a; &#x40;param  &#x7b;Date&#x7d;   date     &#x65e5;&#x4ed8;&#xa; &#x2a; &#x40;param  &#x7b;String&#x7d; &#x5b;format&#x5d; &#x30d5;&#x30a9;&#x30fc;&#x30de;&#x30c3;&#x30c8;&#xa; &#x2a; &#x40;return &#x7b;String&#x7d;          &#x30d5;&#x30a9;&#x30fc;&#x30de;&#x30c3;&#x30c8;&#x6e08;&#x307f;&#x65e5;&#x4ed8;&#xa; &#x2a;&#x2f;&#xa;function formatDate&#x28;date, format&#x29; &#x7b;&#xa;  if &#x28;&#x21;format&#x29; format &#x3d; &#x27;YYYY&#x2f;MM&#x2f;DD hh&#x3a;mm&#x3a;ss&#x27;&#x3b; &#x2f;&#x2f;.SSS&#x306f;&#x30c0;&#x30e1;&#x307f;&#x305f;&#x3044;&#x3002;&#xa;  format &#x3d; format.replace&#x28;&#x2f;YYYY&#x2f;g, date.getFullYear&#x28;&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;MM&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; &#x28;date.getMonth&#x28;&#x29; &#x2b; 1&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;DD&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getDate&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;hh&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getHours&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;mm&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getMinutes&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;ss&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getSeconds&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  if &#x28;format.match&#x28;&#x2f;S&#x2f;g&#x29;&#x29; &#x7b;&#xa;    var milliSeconds &#x3d; &#x28;&#x27;00&#x27; &#x2b; date.getMilliseconds&#x28;&#x29;&#x29;.slice&#x28;-3&#x29;&#x3b;&#xa;    var length &#x3d; format.match&#x28;&#x2f;S&#x2f;g&#x29;.length&#x3b;&#xa;    for &#x28;var i &#x3d; 0&#x3b; i &#x3c; length&#x3b; i&#x2b;&#x2b;&#x29; format &#x3d; format.replace&#x28;&#x2f;S&#x2f;, milliSeconds.substring&#x28;i, i &#x2b; 1&#x29;&#x29;&#x3b;&#xa;  &#x7d;&#xa;  return format&#x3b;&#xa;&#x7d;&#x3b;&#xa;</jsScript_script>
+        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var createdDate &#x3d; new Date&#x28;&#x27;1990&#x2f;05&#x2f;11&#x27;&#x29;&#x3b;&#xa;createdDate.setDate&#x28;Math.random&#x28;&#x29; &#x2a; 10000 &#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;var testDate &#x3d; new Date&#x28;&#x27;2000&#x2f;01&#x2f;01&#x27;&#x29;&#x3b;&#xd;&#xa;testDate.setDate&#x28;Math.random&#x28;&#x29; &#x2a; 5000 &#x29;&#x3b;&#xd;&#xa;&#xa;var price &#x3d; Math.random&#x28;&#x29; &#x2a; 10000&#x3b;&#xa;&#xa;var url &#x3d; _url&#x2b;&#x22;megacorp&#x2f;employee&#x2f;_bulk&#x22;&#xa;&#xa;var fmat &#x3d;&#x22;YYYY&#x2f;MM&#x2f;DD hh&#x3a;mm&#x3a;ss&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xa;var bulkBody&#x3d;createInsertStr&#x28;100&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;function getRandomInt&#x28;min, max&#x29; &#x7b;&#xd;&#xa;  return Math.floor&#x28; Math.random&#x28;&#x29; &#x2a; &#x28;max - min &#x2b; 1&#x29; &#x29; &#x2b; min&#x3b;&#xd;&#xa;&#x7d;&#xa;&#xd;&#xa;&#x2f;&#x2a;&#x2a;&#xd;&#xa; &#x2a; roopCount&#x5206;&#x3060;&#x3051;&#x3001;&#x540c;&#x3058;&#x6587;&#x5b57;&#x5217;&#x3092;&#x751f;&#x6210;&#x3059;&#x308b;&#x3002;&#xd;&#xa; &#x2a; return BulkInsert&#x6587;&#x5b57;&#x5217;&#xd;&#xa; &#x2a;&#x2f;&#xa;function createInsertStr&#x28; roopCount&#x29;&#x7b;&#xa;var bodyString &#x3d;&#x22;&#x22;&#x3b;&#xa; for&#x28;i&#x3d;0&#x3b;i&#x3c;roopCount&#x3b;i&#x2b;&#x2b;&#x29;&#x7b;&#xd;&#xa;	var body5 &#x3d; &#x22;&#x7b;&#x5c;&#x22;title_str&#x5c;&#x22;&#x3a; &#x5c;&#x22;&#x30ce;&#x30ad;&#x30a2;&#x3001;&#x643a;&#x5e2f;&#x5e02;&#x5834;&#x306b;&#x518d;&#x53c2;&#x5165;&#xff1d;&#x8001;&#x8217;&#x30d6;&#x30e9;&#x30f3;&#x30c9;&#x5b58;&#x7d9a;&#x3078;&#xff1a;&#x6642;&#x4e8b;&#x30c9;&#x30c3;&#x30c8;&#x30b3;&#x30e0;&#x5c;&#x22;, &#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;body&#x5c;&#x22;&#x3a;  &#x5c;&#x22; &#x3010;&#x30ed;&#x30f3;&#x30c9;&#x30f3;&#x6642;&#x4e8b;&#x3011;&#x30d5;&#x30a3;&#x30f3;&#x30e9;&#x30f3;&#x30c9;&#x306e;&#x901a;&#x4fe1;&#x6a5f;&#x5668;&#x5927;&#x624b;&#x30ce;&#x30ad;&#x30a2;&#x306f;18&#x65e5;&#x3001;&#x643a;&#x5e2f;&#x96fb;&#x8a71;&#x7aef;&#x672b;&#x5e02;&#x5834;&#x3078;&#x306e;&#x518d;&#x53c2;&#x5165;&#x3092;&#x767a;&#x8868;&#x3057;&#x305f;&#x3002;&#x81ea;&#x793e;&#x3067;&#x306f;&#x7aef;&#x672b;&#x3092;&#x88fd;&#x9020;&#x305b;&#x305a;&#x3001;&#x540c;&#x56fd;&#x306e;&#x65b0;&#x8208;&#x4f01;&#x696d;HMD&#x30b0;&#x30ed;&#x30fc;&#x30d0;&#x30eb;&#x306b;&#x30d6;&#x30e9;&#x30f3;&#x30c9;&#x4f7f;&#x7528;&#x6a29;&#x3092;&#x4ed8;&#x4e0e;&#x3059;&#x308b;&#x3068;&#x3068;&#x3082;&#x306b;&#x3001;&#x53f0;&#x6e7e;&#x306e;&#x9d3b;&#x6d77;&#xff08;&#x30db;&#x30f3;&#x30cf;&#x30a4;&#xff09;&#x7cbe;&#x5bc6;&#x5de5;&#x696d; ..&#x5c;&#x22;, &#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;user_id&#x5c;&#x22;&#x3a;  &#x5c;&#x22;&#x22;&#x2b;name1&#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;category&#x5c;&#x22;&#x3a;  &#x5c;&#x22;&#x22;&#x2b;getCategory&#x28;&#x29; &#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;view_count&#x5c;&#x22; &#x3a; &#x22;&#x2b;getRandomInt&#x28;1, 1000&#x29;&#x2b;&#x22;,&#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;update_count&#x5c;&#x22;&#x3a; &#x22;&#x2b;getRandomInt&#x28;10, 10000&#x29;&#x2b;&#x22;,&#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;created_date&#x5c;&#x22;&#x3a; &#x5c;&#x22;&#x22;&#x2b;formatDate&#x28;createdDate,fmat&#x29;&#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;posted_location&#x5c;&#x22;&#x3a; &#x5b; &#x22;&#x2b;getRandomInt&#x28;100,115&#x29;&#x2b;&#x22;.129, 31.31 &#x5d; &#x7d;&#x22;&#x3b;&#xd;&#xa;&#xa;	bodyString &#x3d; bodyString&#x2b;&#x22;&#x7b;&#x5c;&#x22;update&#x5c;&#x22;&#x3a;&#x7b;&#x5c;&#x22;_id&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b; r_uuid&#x2b;i &#x2b; &#x22;&#x5c;&#x22;,&#x5c;&#x22;_retry_on_conflict&#x5c;&#x22;&#x3a;2&#x7d;&#x7d;&#x5c;n&#x22;&#xa;	&#x2b;&#x22;&#x7b;&#x5c;&#x22;doc&#x5c;&#x22;&#x3a;&#x22;&#x2b;body5&#x2b;&#x22;,&#x5c;&#x22;doc_as_upsert&#x5c;&#x22; &#x3a; true&#x7d;&#x5c;n&#x22;&#xa; &#x7d;&#xa; return bodyString&#x3b;&#xa;&#x7d;&#xa; &#xa; function getCategory&#x28;&#x29;&#x7b;&#xa;	var rnum &#x3d; &#x28;Math.random&#x28;&#x29;&#x2a;1000&#x29;&#x25;10&#xa;	&#x2f;&#x2f;document.write&#x28;&#x22;Randam&#x3a;&#x22;&#x2b;rnum&#x29;&#x3b;&#xa;	if&#x28;rnum &#x3c; 1&#x29;&#x7b;&#xa;		return &#x22;A2344&#x22;&#x3b;&#xa;	&#x7d;else if&#x28;rnum&#x3c;2&#x29;&#x7b;&#xa;		return &#x22;A2394&#x22;&#x3b;&#xa;	&#x7d;else if&#x28;rnum&#x3c;5&#x29;&#x7b;&#xa;		return &#x22;B9294&#x22;&#x3b;&#xa;	&#x7d;&#xa;else if&#x28;rnum&#x3c;6&#x29;&#x7b;&#xa;		return &#x22;K9392&#x22;&#x3b;&#xa;	&#x7d;&#xa;else if&#x28;rnum&#x3c;7&#x29;&#x7b;&#xa;		return &#x22;C9232&#x22;&#x3b;&#xa;	&#x7d;&#xa;else if&#x28;rnum&#x3c;8&#x29;&#x7b;&#xa;		return &#x22;K9383&#x22;&#x3b;&#xa;	&#x7d;&#xd;&#xa;else if&#x28;rnum&#x3c;9&#x29;&#x7b;&#xd;&#xa;		return &#x22;Z8392&#x22;&#x3b;&#xd;&#xa;	&#x7d;&#xa;else&#x7b;&#xa;	 return &#x22;A9999&#x22;&#x3b;&#xa;	&#x7d;&#xa;&#x7d;&#xa;&#x2f;&#x2a;&#x2a;&#xa; &#x2a; &#x65e5;&#x4ed8;&#x3092;&#x30d5;&#x30a9;&#x30fc;&#x30de;&#x30c3;&#x30c8;&#x3059;&#x308b;&#xa; &#x2a; &#x40;param  &#x7b;Date&#x7d;   date     &#x65e5;&#x4ed8;&#xa; &#x2a; &#x40;param  &#x7b;String&#x7d; &#x5b;format&#x5d; &#x30d5;&#x30a9;&#x30fc;&#x30de;&#x30c3;&#x30c8;&#xa; &#x2a; &#x40;return &#x7b;String&#x7d;          &#x30d5;&#x30a9;&#x30fc;&#x30de;&#x30c3;&#x30c8;&#x6e08;&#x307f;&#x65e5;&#x4ed8;&#xa; &#x2a;&#x2f;&#xa;function formatDate&#x28;date, format&#x29; &#x7b;&#xa;  if &#x28;&#x21;format&#x29; format &#x3d; &#x27;YYYY&#x2f;MM&#x2f;DD hh&#x3a;mm&#x3a;ss&#x27;&#x3b; &#x2f;&#x2f;.SSS&#x306f;&#x30c0;&#x30e1;&#x307f;&#x305f;&#x3044;&#x3002;&#xa;  format &#x3d; format.replace&#x28;&#x2f;YYYY&#x2f;g, date.getFullYear&#x28;&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;MM&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; &#x28;date.getMonth&#x28;&#x29; &#x2b; 1&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;DD&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getDate&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;hh&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getHours&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;mm&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getMinutes&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;ss&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getSeconds&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  if &#x28;format.match&#x28;&#x2f;S&#x2f;g&#x29;&#x29; &#x7b;&#xa;    var milliSeconds &#x3d; &#x28;&#x27;00&#x27; &#x2b; date.getMilliseconds&#x28;&#x29;&#x29;.slice&#x28;-3&#x29;&#x3b;&#xa;    var length &#x3d; format.match&#x28;&#x2f;S&#x2f;g&#x29;.length&#x3b;&#xa;    for &#x28;var i &#x3d; 0&#x3b; i &#x3c; length&#x3b; i&#x2b;&#x2b;&#x29; format &#x3d; format.replace&#x28;&#x2f;S&#x2f;, milliSeconds.substring&#x28;i, i &#x2b; 1&#x29;&#x29;&#x3b;&#xa;  &#x7d;&#xa;  return format&#x3b;&#xa;&#x7d;&#x3b;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>createdDate</name>
         <rename>createdDate</rename>
         <type>Date</type>
@@ -512,162 +433,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>558</xloc>
       <yloc>317</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>bulk insert 2</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var createdDate &#x3d; new Date&#x28;&#x27;1990&#x2f;05&#x2f;11&#x27;&#x29;&#x3b;&#xa;createdDate.setDate&#x28;Math.random&#x28;&#x29; &#x2a; 10000 &#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;var testDate &#x3d; new Date&#x28;&#x27;2000&#x2f;01&#x2f;01&#x27;&#x29;&#x3b;&#xd;&#xa;testDate.setDate&#x28;Math.random&#x28;&#x29; &#x2a; 5000 &#x29;&#x3b;&#xd;&#xa;&#xa;var price &#x3d; Math.random&#x28;&#x29; &#x2a; 10000&#x3b;&#xa;&#xa;var url &#x3d; _url&#x2b;&#x22;megacorp&#x2f;employee&#x2f;_bulk&#x22;&#xa;&#x2f;&#x2f;var url &#x3d; _url&#x2b;&#x22;megacorp&#x2f;employee&#x2f;_bulk&#x22;  &#x2f;&#x2f;bulk&#x30a4;&#x30f3;&#x30b5;&#x30fc;&#x30c8;&#x7528;&#xa;var groupCode &#x3d; getGroupCode&#x28;&#x29;&#xa;var fmat &#x3d;&#x22;YYYY&#x2f;MM&#x2f;DD hh&#x3a;mm&#x3a;ss&#x22;&#x3b;&#xa;var body&#x3d;&#x22;&#x7b;&#x5c;&#x22;uuid&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b;r_uuid&#x2b;&#x22;&#x5c;&#x22;,&#x5c;&#x22;seqNumber&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b;seqNumber&#x2b;&#xa;	&#x22;&#x5c;&#x22;,&#x5c;&#x22;firstName&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b;name1&#x2b;&#x22;&#x5c;&#x22;,&#x5c;&#x22;&#x22;&#x2b;&#xa;&#x22;randomString&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b;r_string&#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xa;&#x22;&#x5c;&#x22;randomInt&#x5c;&#x22;&#x3a;&#x22;&#x2b;r_int&#x2b;&#x22;,&#x22;&#x2b;&#xa;&#x22;&#x5c;&#x22;groupCode&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b;groupCode&#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xa;	&#x22;&#x5c;&#x22;testDate&#x5c;&#x22;&#x3a;&#x5c;&#x22;2015&#x2f;12&#x2f;01 12&#x3a;01&#x3a;05&#x5c;&#x22;,&#x22;&#x2b;&#xa;	&#x22;&#x5c;&#x22;createdDate&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b;formatDate&#x28;createdDate,fmat&#x29;&#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xa;&#x2f;&#x2f;&#x22;&#x5c;&#x22;updatedDate&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b;formatDate&#x28;updatedDate,fmat&#x29;&#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xa;	&#x22;&#x5c;&#x22;price&#x5c;&#x22;&#x3a;&#x22;&#x2b;price&#x2b;&#x22;&#x7d;&#x22;&#x3b;&#xa;&#xa;var bulkBody&#x3d;createInsertStr&#x28;100&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;function randomValue&#x28;max&#x29;&#x7b;&#xd;&#xa;	var random &#x3d;  &#x28;Math.random&#x28;&#x29;&#x2a;1000&#x29;&#x25;10&#xd;&#xa;	return random&#x3b;&#xd;&#xa;&#x7d;&#xa;&#xa;function createInsertStr&#x28; roopCount&#x29;&#x7b;&#xa;var bodyString &#x3d;&#x22;&#x22;&#x3b;&#xa; for&#x28;i&#x3d;0&#x3b;i&#x3c;roopCount&#x3b;i&#x2b;&#x2b;&#x29;&#x7b;&#xa;	bodyString &#x3d; bodyString&#x2b;&#x22;&#x7b;&#x5c;&#x22;update&#x5c;&#x22;&#x3a;&#x7b;&#x5c;&#x22;_id&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b; r_uuid&#x2b;i &#x2b; &#x22;&#x5c;&#x22;,&#x5c;&#x22;_retry_on_conflict&#x5c;&#x22;&#x3a;2&#x7d;&#x7d;&#x5c;n&#x22;&#xa;&#x2b;&#x22;&#x7b;&#x5c;&#x22;doc&#x5c;&#x22;&#x3a;&#x22;&#x2b;body&#x2b;&#x22;,&#x5c;&#x22;doc_as_upsert&#x5c;&#x22; &#x3a; true&#x7d;&#x5c;n&#x22;&#xa; &#x7d;&#xa; return bodyString&#x3b;&#xa;&#x7d;&#xa; &#xd;&#xa;&#xa;&#xa; function getGroupCode&#x28;&#x29;&#x7b;&#xa;	var rnum &#x3d; &#x28;Math.random&#x28;&#x29;&#x2a;1000&#x29;&#x25;10&#xa;	&#x2f;&#x2f;document.write&#x28;&#x22;Randam&#x3a;&#x22;&#x2b;rnum&#x29;&#x3b;&#xa;	if&#x28;rnum &#x3c; 1&#x29;&#x7b;&#xa;		return &#x22;A0001&#x22;&#x3b;&#xa;	&#x7d;else if&#x28;rnum&#x3c;2&#x29;&#x7b;&#xa;		return &#x22;A0002&#x22;&#x3b;&#xa;	&#x7d;else if&#x28;rnum&#x3c;5&#x29;&#x7b;&#xa;		return &#x22;A0005&#x22;&#x3b;&#xa;	&#x7d;&#xa;else if&#x28;rnum&#x3c;6&#x29;&#x7b;&#xa;		return &#x22;A0006&#x22;&#x3b;&#xa;	&#x7d;&#xa;else if&#x28;rnum&#x3c;7&#x29;&#x7b;&#xa;		return &#x22;A0007&#x22;&#x3b;&#xa;	&#x7d;&#xa;else if&#x28;rnum&#x3c;8&#x29;&#x7b;&#xa;		return &#x22;A0008&#x22;&#x3b;&#xa;	&#x7d;&#xa;else&#x7b;&#xa;	 return &#x22;A9999&#x22;&#x3b;&#xa;	&#x7d;&#xa;&#x7d;&#xa;&#x2f;&#x2a;&#x2a;&#xa; &#x2a; &#x65e5;&#x4ed8;&#x3092;&#x30d5;&#x30a9;&#x30fc;&#x30de;&#x30c3;&#x30c8;&#x3059;&#x308b;&#xa; &#x2a; &#x40;param  &#x7b;Date&#x7d;   date     &#x65e5;&#x4ed8;&#xa; &#x2a; &#x40;param  &#x7b;String&#x7d; &#x5b;format&#x5d; &#x30d5;&#x30a9;&#x30fc;&#x30de;&#x30c3;&#x30c8;&#xa; &#x2a; &#x40;return &#x7b;String&#x7d;          &#x30d5;&#x30a9;&#x30fc;&#x30de;&#x30c3;&#x30c8;&#x6e08;&#x307f;&#x65e5;&#x4ed8;&#xa; &#x2a;&#x2f;&#xa;function formatDate&#x28;date, format&#x29; &#x7b;&#xa;  if &#x28;&#x21;format&#x29; format &#x3d; &#x27;YYYY&#x2f;MM&#x2f;DD hh&#x3a;mm&#x3a;ss&#x27;&#x3b; &#x2f;&#x2f;.SSS&#x306f;&#x30c0;&#x30e1;&#x307f;&#x305f;&#x3044;&#x3002;&#xa;  format &#x3d; format.replace&#x28;&#x2f;YYYY&#x2f;g, date.getFullYear&#x28;&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;MM&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; &#x28;date.getMonth&#x28;&#x29; &#x2b; 1&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;DD&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getDate&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;hh&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getHours&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;mm&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getMinutes&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;ss&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getSeconds&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  if &#x28;format.match&#x28;&#x2f;S&#x2f;g&#x29;&#x29; &#x7b;&#xa;    var milliSeconds &#x3d; &#x28;&#x27;00&#x27; &#x2b; date.getMilliseconds&#x28;&#x29;&#x29;.slice&#x28;-3&#x29;&#x3b;&#xa;    var length &#x3d; format.match&#x28;&#x2f;S&#x2f;g&#x29;.length&#x3b;&#xa;    for &#x28;var i &#x3d; 0&#x3b; i &#x3c; length&#x3b; i&#x2b;&#x2b;&#x29; format &#x3d; format.replace&#x28;&#x2f;S&#x2f;, milliSeconds.substring&#x28;i, i &#x2b; 1&#x29;&#x29;&#x3b;&#xa;  &#x7d;&#xa;  return format&#x3b;&#xa;&#x7d;&#x3b;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>createdDate</name>
-        <rename>createdDate</rename>
-        <type>Date</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>price</name>
-        <rename>price</rename>
-        <type>Number</type>
-        <length>16</length>
-        <precision>2</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>url</name>
-        <rename>url</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>groupCode</name>
-        <rename>groupCode</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>fmat</name>
-        <rename>fmat</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>body</name>
-        <rename>body</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>bulkBody</name>
-        <rename>bulkBody</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>getGroupCode</name>
-        <rename>getGroupCode</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>formatDate</name>
-        <rename>formatDate</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>356</xloc>
-      <yloc>138</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>bulk insert 3</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script here&#xa;&#xa;var createdDate &#x3d; new Date&#x28;&#x27;1990&#x2f;05&#x2f;11&#x27;&#x29;&#x3b;&#xa;createdDate.setDate&#x28;Math.random&#x28;&#x29; &#x2a; 10000 &#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;var testDate &#x3d; new Date&#x28;&#x27;2000&#x2f;01&#x2f;01&#x27;&#x29;&#x3b;&#xd;&#xa;testDate.setDate&#x28;Math.random&#x28;&#x29; &#x2a; 5000 &#x29;&#x3b;&#xd;&#xa;&#xa;var price &#x3d; Math.random&#x28;&#x29; &#x2a; 10000&#x3b;&#xa;&#xa;var url &#x3d; _url&#x2b;&#x22;megacorp&#x2f;employee&#x2f;_bulk&#x22;&#xa;&#xa;var fmat &#x3d;&#x22;YYYY&#x2f;MM&#x2f;DD hh&#x3a;mm&#x3a;ss&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;var body &#x3d; &#x22;&#x7b;&#x5c;&#x22;title_str&#x5c;&#x22;&#x3a; &#x5c;&#x22;&#x22;&#x2b;getTitle&#x28;&#x29;&#x2b;&#x22;&#x5c;&#x22;, &#x22;&#x2b;&#xd;&#xa;&#x22;&#x5c;&#x22;body&#x5c;&#x22;&#x3a;  &#x5c;&#x22;&#x7c73;&#x98df;&#x54c1;&#x533b;&#x85ac;&#x54c1;&#x5c40;&#xff08;&#xff26;&#xff24;&#xff21;&#xff09;&#x306f;&#xff15;&#x65e5;&#x3001;&#x7c73;&#x56fd;&#x306e;&#x4e2d;&#x9ad8;&#x751f;&#x306e;&#x9593;&#x3067;&#x5229;&#x7528;&#x304c;&#x6025;&#x5897;&#x3057;&#x3066;&#x3044;&#x308b;&#x96fb;&#x5b50;&#x305f;&#x3070;&#x3053;&#x5c;&#x22;, &#x22;&#x2b;&#xd;&#xa;&#x22;&#x5c;&#x22;user_id&#x5c;&#x22;&#x3a;  &#x5c;&#x22;&#x22;&#x2b;name1&#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xd;&#xa;&#x22;&#x5c;&#x22;view_count&#x5c;&#x22; &#x3a; &#x22;&#x2b;getRandomInt&#x28;1, 1000&#x29;&#x2b;&#x22;,&#x22;&#x2b;&#xd;&#xa;&#x22;&#x5c;&#x22;update_count&#x5c;&#x22;&#x3a; &#x22;&#x2b;getRandomInt&#x28;10, 10000&#x29;&#x2b;&#x22;,&#x22;&#x2b;&#xd;&#xa;&#x22;&#x5c;&#x22;created_date&#x5c;&#x22;&#x3a; &#x5c;&#x22;&#x22;&#x2b;formatDate&#x28;createdDate,fmat&#x29;&#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xd;&#xa;&#x22;&#x5c;&#x22;posted_location&#x5c;&#x22;&#x3a; &#x5b; &#x22;&#x2b;getRandomInt&#x28;100,115&#x29;&#x2b;&#x22;.129, 31.31 &#x5d; &#x7d;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xa;&#xd;&#xa;&#xa;var bulkBody&#x3d;createInsertStr&#x28;10&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;function getRandomInt&#x28;min, max&#x29; &#x7b;&#xd;&#xa;  return Math.floor&#x28; Math.random&#x28;&#x29; &#x2a; &#x28;max - min &#x2b; 1&#x29; &#x29; &#x2b; min&#x3b;&#xd;&#xa;&#x7d;&#xa;&#xd;&#xa;&#x2f;&#x2a;&#x2a;&#xd;&#xa; &#x2a; roopCount&#x5206;&#x3060;&#x3051;&#x3001;&#x540c;&#x3058;&#x6587;&#x5b57;&#x5217;&#x3092;&#x751f;&#x6210;&#x3059;&#x308b;&#x3002;&#xd;&#xa; &#x2a; return BulkInsert&#x6587;&#x5b57;&#x5217;&#xd;&#xa; &#x2a;&#x2f;&#xa;function createInsertStr&#x28; roopCount&#x29;&#x7b;&#xa;var bodyString &#x3d;&#x22;&#x22;&#x3b;&#xa; for&#x28;i&#x3d;0&#x3b;i&#x3c;roopCount&#x3b;i&#x2b;&#x2b;&#x29;&#x7b;&#xd;&#xa;	var body5 &#x3d; &#x22;&#x7b;&#x5c;&#x22;title_str&#x5c;&#x22;&#x3a; &#x5c;&#x22;&#x22;&#x2b;getTitle&#x28;&#x29;&#x2b;&#x22;&#x5c;&#x22;, &#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;body&#x5c;&#x22;&#x3a;  &#x5c;&#x22;&#x7c73;&#x98df;&#x54c1;&#x533b;&#x85ac;&#x54c1;&#x5c40;&#xff08;&#xff26;&#xff24;&#xff21;&#xff09;&#x306f;&#xff15;&#x65e5;&#x3001;&#x7c73;&#x56fd;&#x306e;&#x4e2d;&#x9ad8;&#x751f;&#x306e;&#x9593;&#x3067;&#x5229;&#x7528;&#x304c;&#x6025;&#x5897;&#x3057;&#x3066;&#x3044;&#x308b;&#x96fb;&#x5b50;&#x305f;&#x3070;&#x3053;&#x5c;&#x22;, &#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;user_id&#x5c;&#x22;&#x3a;  &#x5c;&#x22;&#x22;&#x2b;name1&#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;view_count&#x5c;&#x22; &#x3a; &#x22;&#x2b;getRandomInt&#x28;1, 1000&#x29;&#x2b;&#x22;,&#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;update_count&#x5c;&#x22;&#x3a; &#x22;&#x2b;getRandomInt&#x28;10, 10000&#x29;&#x2b;&#x22;,&#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;created_date&#x5c;&#x22;&#x3a; &#x5c;&#x22;&#x22;&#x2b;formatDate&#x28;createdDate,fmat&#x29;&#x2b;&#x22;&#x5c;&#x22;,&#x22;&#x2b;&#xd;&#xa;	&#x22;&#x5c;&#x22;posted_location&#x5c;&#x22;&#x3a; &#x5b; &#x22;&#x2b;getRandomInt&#x28;100,115&#x29;&#x2b;&#x22;.129, 31.31 &#x5d; &#x7d;&#x22;&#x3b;&#xd;&#xa;&#xa;	bodyString &#x3d; bodyString&#x2b;&#x22;&#x7b;&#x5c;&#x22;update&#x5c;&#x22;&#x3a;&#x7b;&#x5c;&#x22;_id&#x5c;&#x22;&#x3a;&#x5c;&#x22;&#x22;&#x2b; r_uuid&#x2b;i &#x2b; &#x22;&#x5c;&#x22;,&#x5c;&#x22;_retry_on_conflict&#x5c;&#x22;&#x3a;2&#x7d;&#x7d;&#x5c;n&#x22;&#xa;	&#x2b;&#x22;&#x7b;&#x5c;&#x22;doc&#x5c;&#x22;&#x3a;&#x22;&#x2b;body5&#x2b;&#x22;,&#x5c;&#x22;doc_as_upsert&#x5c;&#x22; &#x3a; true&#x7d;&#x5c;n&#x22;&#xa; &#x7d;&#xa; return bodyString&#x3b;&#xa;&#x7d;&#xa; &#xa; function getTitle&#x28;&#x29;&#x7b;&#xa;	var rnum &#x3d; &#x28;Math.random&#x28;&#x29;&#x2a;1000&#x29;&#x25;10&#xa;	&#x2f;&#x2f;document.write&#x28;&#x22;Randam&#x3a;&#x22;&#x2b;rnum&#x29;&#x3b;&#xa;	if&#x28;rnum &#x3c; 1&#x29;&#x7b;&#xa;		return &#x22;&#x96fb;&#x5b50;&#x305f;&#x3070;&#x3053;&#x3001;&#x7c73;&#x3067;&#xff11;&#xff18;&#x6b73;&#x672a;&#x6e80;&#x306b;&#x8ca9;&#x58f2;&#x7981;&#x6b62;&#x3078;&#x3000;&#x5229;&#x7528;&#x6025;&#x5897;&#x3067;&#x22;&#x3b;&#xa;	&#x7d;else if&#x28;rnum&#x3c;2&#x29;&#x7b;&#xa;		return &#x22;&#x6b69;&#x304d;&#x30b9;&#x30de;&#x30db;&#x3001;&#x6b7b;&#x306b;&#x81f3;&#x308b;&#x3053;&#x3068;&#x3082;&#x3000;&#x753b;&#x9762;&#x898b;&#x3066;&#x30a4;&#x30e4;&#x30db;&#x30f3;&#x2026;&#x8ee2;&#x843d;&#x22;&#x3b;&#xa;	&#x7d;else if&#x28;rnum&#x3c;5&#x29;&#x7b;&#xa;		return &#x22;&#x30ce;&#x30ad;&#x30a2;&#x3001;&#x643a;&#x5e2f;&#x5e02;&#x5834;&#x306b;&#x518d;&#x53c2;&#x5165;&#xff1d;&#x8001;&#x8217;&#x30d6;&#x30e9;&#x30f3;&#x30c9;&#x5b58;&#x7d9a;&#x3078;&#x22;&#x3b;&#xa;	&#x7d;&#xa;else if&#x28;rnum&#x3c;6&#x29;&#x7b;&#xa;		return &#x22;&#x30e8;&#x30fc;&#x30ed;&#x30c3;&#x30d1;&#x3067;&#x843d;&#x96f7;&#x88ab;&#x5bb3;&#x591a;&#x767a;&#x3000;&#x96f7;&#x304b;&#x3089;&#x8eab;&#x3092;&#x5b88;&#x308b;&#x306b;&#x306f;&#x22;&#x3b;&#xa;	&#x7d;&#xa;else if&#x28;rnum&#x3c;7&#x29;&#x7b;&#xa;		return &#x22;&#x30d5;&#x30e9;&#x30f3;&#x30b9;&#x306e;&#x30e6;&#x30c0;&#x30e4;&#x4eba;&#x56e3;&#x4f53;&#x3001;&#x30d8;&#x30a4;&#x30c8;&#x30b9;&#x30d4;&#x30fc;&#x30c1;&#x767a;&#x8a00;&#x306e;&#x7ba1;&#x7406;&#x3092;&#x3081;&#x3050;&#x3063;&#x3066;&#x30bd;&#x30fc;&#x30b7;&#x30e3;&#x30eb;&#x30e1;&#x30c7;&#x30a3;&#x30a2;&#x3092;&#x8a34;&#x3048;&#x22;&#x3b;&#xa;	&#x7d;&#xa;else if&#x28;rnum&#x3c;8&#x29;&#x7b;&#xa;		return &#x22;&#x30b9;&#x30de;&#x30db;&#x3084;&#x30bf;&#x30d6;&#x30ec;&#x30c3;&#x30c8;&#x3067;&#x624b;&#x8efd;&#x306b;&#x79d1;&#x5b66;&#x7684;&#x6e2c;&#x5b9a;&#x304c;&#x53ef;&#x80fd;&#x306b;&#x22;&#x3b;&#xa;	&#x7d;&#xa;else&#x7b;&#xa;	 return &#x22;A9999&#x22;&#x3b;&#xa;	&#x7d;&#xa;&#x7d;&#xa;&#x2f;&#x2a;&#x2a;&#xa; &#x2a; &#x65e5;&#x4ed8;&#x3092;&#x30d5;&#x30a9;&#x30fc;&#x30de;&#x30c3;&#x30c8;&#x3059;&#x308b;&#xa; &#x2a; &#x40;param  &#x7b;Date&#x7d;   date     &#x65e5;&#x4ed8;&#xa; &#x2a; &#x40;param  &#x7b;String&#x7d; &#x5b;format&#x5d; &#x30d5;&#x30a9;&#x30fc;&#x30de;&#x30c3;&#x30c8;&#xa; &#x2a; &#x40;return &#x7b;String&#x7d;          &#x30d5;&#x30a9;&#x30fc;&#x30de;&#x30c3;&#x30c8;&#x6e08;&#x307f;&#x65e5;&#x4ed8;&#xa; &#x2a;&#x2f;&#xa;function formatDate&#x28;date, format&#x29; &#x7b;&#xa;  if &#x28;&#x21;format&#x29; format &#x3d; &#x27;YYYY&#x2f;MM&#x2f;DD hh&#x3a;mm&#x3a;ss&#x27;&#x3b; &#x2f;&#x2f;.SSS&#x306f;&#x30c0;&#x30e1;&#x307f;&#x305f;&#x3044;&#x3002;&#xa;  format &#x3d; format.replace&#x28;&#x2f;YYYY&#x2f;g, date.getFullYear&#x28;&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;MM&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; &#x28;date.getMonth&#x28;&#x29; &#x2b; 1&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;DD&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getDate&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;hh&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getHours&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;mm&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getMinutes&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  format &#x3d; format.replace&#x28;&#x2f;ss&#x2f;g, &#x28;&#x27;0&#x27; &#x2b; date.getSeconds&#x28;&#x29;&#x29;.slice&#x28;-2&#x29;&#x29;&#x3b;&#xa;  if &#x28;format.match&#x28;&#x2f;S&#x2f;g&#x29;&#x29; &#x7b;&#xa;    var milliSeconds &#x3d; &#x28;&#x27;00&#x27; &#x2b; date.getMilliseconds&#x28;&#x29;&#x29;.slice&#x28;-3&#x29;&#x3b;&#xa;    var length &#x3d; format.match&#x28;&#x2f;S&#x2f;g&#x29;.length&#x3b;&#xa;    for &#x28;var i &#x3d; 0&#x3b; i &#x3c; length&#x3b; i&#x2b;&#x2b;&#x29; format &#x3d; format.replace&#x28;&#x2f;S&#x2f;, milliSeconds.substring&#x28;i, i &#x2b; 1&#x29;&#x29;&#x3b;&#xa;  &#x7d;&#xa;  return format&#x3b;&#xa;&#x7d;&#x3b;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>createdDate</name>
-        <rename>createdDate</rename>
-        <type>Date</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>price</name>
-        <rename>price</rename>
-        <type>Number</type>
-        <length>16</length>
-        <precision>2</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>url</name>
-        <rename>url</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>groupCode</name>
-        <rename>groupCode</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>fmat</name>
-        <rename>fmat</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>body</name>
-        <rename>body</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>bulkBody</name>
-        <rename>bulkBody</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>getGroupCode</name>
-        <rename>getGroupCode</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>formatDate</name>
-        <rename>formatDate</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>328</xloc>
-      <yloc>204</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
