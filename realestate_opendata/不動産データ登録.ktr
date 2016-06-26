@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>Elastic_CSV&#x30c7;&#x30fc;&#x30bf;&#x79fb;&#x884c;</name>
+    <name>&#x4e0d;&#x52d5;&#x7523;&#x30c7;&#x30fc;&#x30bf;&#x767b;&#x9332; to Elasticsearch</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -81,6 +81,407 @@
   <hop> <from>REST Client</from><to>log</to><enabled>Y</enabled> </hop>
   </order>
   <step>
+    <name>CSV file input 2</name>
+    <type>CsvInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filename>&#x2f;Users&#x2f;nagase&#x2f;iotworkshop&#x2f;realestate_opendata&#x2f;&#x6771;&#x4eac;&#x540d;&#x53e4;&#x5c4b;&#x5927;&#x962a;_&#x4e0d;&#x52d5;&#x7523;_mini.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>,</separator>
+    <enclosure>&#x22;</enclosure>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <encoding/>
+    <fields>
+      <field>
+        <name>No</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x7a2e;&#x985e;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>9</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x5730;&#x57df;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x5e02;&#x533a;&#x753a;&#x6751;&#x30b3;&#x30fc;&#x30c9;</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x90fd;&#x9053;&#x5e9c;&#x770c;&#x540d;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x5e02;&#x533a;&#x753a;&#x6751;&#x540d;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>7</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x5730;&#x533a;&#x540d;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x6700;&#x5bc4;&#x99c5;&#xff1a;&#x540d;&#x79f0;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>6</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x6700;&#x5bc4;&#x99c5;&#xff1a;&#x8ddd;&#x96e2;&#xff08;&#x5206;&#xff09;</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x53d6;&#x5f15;&#x4fa1;&#x683c;&#xff08;&#x7dcf;&#x984d;&#xff09;</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x576a;&#x5358;&#x4fa1;</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x9593;&#x53d6;&#x308a;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>4</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x9762;&#x7a4d;&#xff08;u&#xff09;</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x53d6;&#x5f15;&#x4fa1;&#x683c;&#xff08;u&#x5358;&#x4fa1;&#xff09;</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x571f;&#x5730;&#x306e;&#x5f62;&#x72b6;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>5</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x9593;&#x53e3;</name>
+        <type>Number</type>
+        <format>&#x23;.&#x23;</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>4</length>
+        <precision>1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x5ef6;&#x5e8a;&#x9762;&#x7a4d;&#xff08;u&#xff09;</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x5efa;&#x7bc9;&#x5e74;</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x5efa;&#x7269;&#x306e;&#x69cb;&#x9020;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x5efa;&#x7269;&#x306e;&#x7528;&#x9014;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>8</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x4eca;&#x5f8c;&#x306e;&#x5229;&#x7528;&#x76ee;&#x7684;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>3</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x524d;&#x9762;&#x9053;&#x8def;&#xff1a;&#x65b9;&#x4f4d;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>2</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x524d;&#x9762;&#x9053;&#x8def;&#xff1a;&#x7a2e;&#x985e;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>2</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x524d;&#x9762;&#x9053;&#x8def;&#xff1a;&#x5e45;&#x54e1;&#xff08;&#xff4d;&#xff09;</name>
+        <type>Number</type>
+        <format>&#x23;.&#x23;</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>4</length>
+        <precision>1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x90fd;&#x5e02;&#x8a08;&#x753b;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>11</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x5efa;&#x307a;&#x3044;&#x7387;&#xff08;&#xff05;&#xff09;</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x5bb9;&#x7a4d;&#x7387;&#xff08;&#xff05;&#xff09;</name>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
+        <precision>0</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x53d6;&#x5f15;&#x6642;&#x70b9;</name>
+        <type>Date</type>
+        <format>yyyy&#x2f;MM&#x2f;dd</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x5099;&#x8003;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>6</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x7def;&#x5ea6;</name>
+        <type>Number</type>
+        <format>&#x23;.&#x23;</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>9</length>
+        <precision>6</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x7d4c;&#x5ea6;</name>
+        <type>Number</type>
+        <format>&#x23;.&#x23;</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>10</length>
+        <precision>6</precision>
+        <trim_type>none</trim_type>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>174</xloc>
+      <yloc>119</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>G&#x2f;L &#x52d8;&#x5b9a;&#x30de;&#x30b9;&#x30bf;</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection/>
+    <sql>SELECT &#x2a; from sapjp5.SKA1&#x3b;</sql>
+    <limit>&#x24;&#x7b;maxcount&#x7d;</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>130</xloc>
+      <yloc>257</yloc>
+      <draw>N</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>JAVA</name>
     <type>UserDefinedJavaClass</type>
     <description/>
@@ -114,26 +515,28 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
 
 		//一行すすめる
   		 r=getRow();
-
  		 if (r==null)
   		{
  			break;
   		}
-
 		String firstLine ="{ \"create\" : { \"_retry_on_conflict\" : 2} }\n";
 		String secondLine = "{"
-		+"\"title_str\":\""+ get(Fields.In, "タイトル").getString(r) +"\","
-		+"\"body\":\""+ get(Fields.In, "本文").getString(r) +"\","
-		+"\"created_date\":\""+  get(Fields.In, "作成日").getString(r) +"\","
-		+"\"update_count\":\""+ get(Fields.In, "更新カウント").getString(r) +"\","
-		+"\"view_count\":\""+ get(Fields.In, "ビューカウント").getString(r) +"\","
+		+"\"No\":\""+ get(Fields.In, "No").getString(r) +"\","
+		+"\"種類\":\""+ get(Fields.In, "種類").getString(r) +"\","
+		+"\"地域\":\""+ get(Fields.In, "地域").getString(r) +"\","
+		+"\"市区町村コード\":\""+  get(Fields.In, "市区町村コード").getString(r) +"\","
+		+"\"都道府県名\":\""+ get(Fields.In, "都道府県名").getString(r) +"\","
+		+"\"市区町村名\":\""+ get(Fields.In, "市区町村名").getString(r) +"\","
+
++"\"建築年\":\""+ get(Fields.In, "建築年").getString(r) +"\","
++"\"取引時点\":\""+ get(Fields.In, "取引時点").getString(r) +"\","
+
 		+"\"posted_location\": ["+ get(Fields.In, "緯度").getString(r)+"," +get(Fields.In, "経度").getString(r)+"]"
 		+"}\n";
 
 
 		//取得したデータをbody（戻り値）に詰める
 		body+=firstLine+secondLine;
-
 
 	}
    Object[] outputRowData = RowDataUtil.resizeArray(r, data.outputRowMeta.size());
@@ -180,128 +583,6 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
     </step>
 
   <step>
-    <name>CSV file input 2</name>
-    <type>CsvInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <filename>C&#x3a;&#x5c;repos&#x5c;iotworkshop&#x5c;SampleData.csv</filename>
-    <filename_field/>
-    <rownum_field/>
-    <include_filename>N</include_filename>
-    <separator>,</separator>
-    <enclosure>&#x22;</enclosure>
-    <header>Y</header>
-    <buffer_size>50000</buffer_size>
-    <lazy_conversion>Y</lazy_conversion>
-    <add_filename_result>N</add_filename_result>
-    <parallel>N</parallel>
-    <newline_possible>N</newline_possible>
-    <encoding/>
-    <fields>
-      <field>
-        <name>&#x30bf;&#x30a4;&#x30c8;&#x30eb;</name>
-        <type>String</type>
-        <format/>
-        <currency>&#xffe5;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>6</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>&#x672c;&#x6587;</name>
-        <type>String</type>
-        <format/>
-        <currency>&#xffe5;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>4</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>&#x30e6;&#x30fc;&#x30b6;ID</name>
-        <type>String</type>
-        <format/>
-        <currency>&#xffe5;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>6</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>&#x30d3;&#x30e5;&#x30fc;&#x30ab;&#x30a6;&#x30f3;&#x30c8;</name>
-        <type>Integer</type>
-        <format>&#x23;</format>
-        <currency>&#xffe5;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>15</length>
-        <precision>0</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>&#x66f4;&#x65b0;&#x30ab;&#x30a6;&#x30f3;&#x30c8;</name>
-        <type>Integer</type>
-        <format>&#x23;</format>
-        <currency>&#xffe5;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>15</length>
-        <precision>0</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>&#x4f5c;&#x6210;&#x65e5;</name>
-        <type>Date</type>
-        <format>yyyy&#x2f;MM&#x2f;dd&#x27;T&#x27;HH&#x3a;mm&#x3a;ssZ</format>
-        <currency>&#xffe5;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>&#x7def;&#x5ea6;</name>
-        <type>Number</type>
-        <format>&#x23;.&#x23;</format>
-        <currency>&#xffe5;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>15</length>
-        <precision>3</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>&#x7d4c;&#x5ea6;</name>
-        <type>Number</type>
-        <format>&#x23;.&#x23;</format>
-        <currency>&#xffe5;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>15</length>
-        <precision>2</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>174</xloc>
-      <yloc>119</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>REST Client</name>
     <type>Rest</type>
     <description/>
@@ -314,7 +595,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
            </partitioning>
     <applicationType>JSON</applicationType>
     <method>PUT</method>
-    <url>http&#x3a;&#x2f;&#x2f;search-namazon-eue2qyuxi7t67k3b67qytkcq3q.ap-northeast-1.es.amazonaws.com&#x2f;my_index&#x2f;blogpost&#x2f;_bulk</url>
+    <url>http&#x3a;&#x2f;&#x2f;nagase2.japanwest.cloudapp.azure.com&#x3a;9200&#x2f;my_index3&#x2f;blogpost&#x2f;_bulk</url>
     <urlInField>N</urlInField>
     <dynamicMethod>N</dynamicMethod>
     <methodFieldName/>
@@ -322,8 +603,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
     <bodyField>body</bodyField>
     <httpLogin/>
     <httpPassword>Encrypted </httpPassword>
-    <proxyHost>172.21.1.14</proxyHost>
-    <proxyPort>12080</proxyPort>
+    <proxyHost/>
+    <proxyPort/>
     <preemptive>N</preemptive>
     <trustStoreFile/>
     <trustStorePassword>Encrypted </trustStorePassword>
@@ -331,6 +612,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
       </headers>
     <parameters>
       </parameters>
+    <matrixParameters>
+      </matrixParameters>
     <result>
       <name>_result</name>
       <code>_code</code>
@@ -341,32 +624,6 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
       <xloc>477</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>G&#x2f;L &#x52d8;&#x5b9a;&#x30de;&#x30b9;&#x30bf;</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection/>
-    <sql>SELECT &#x2a; from sapjp5.SKA1&#x3b;</sql>
-    <limit>&#x24;&#x7b;maxcount&#x7d;</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>130</xloc>
-      <yloc>257</yloc>
-      <draw>N</draw>
       </GUI>
     </step>
 
@@ -401,6 +658,51 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>618</xloc>
       <yloc>194</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>REST Client 2</name>
+    <type>Rest</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <applicationType>JSON</applicationType>
+    <method>PUT</method>
+    <url>http&#x3a;&#x2f;&#x2f;search-namazon-eue2qyuxi7t67k3b67qytkcq3q.ap-northeast-1.es.amazonaws.com&#x2f;my_index&#x2f;blogpost&#x2f;_bulk</url>
+    <urlInField>N</urlInField>
+    <dynamicMethod>N</dynamicMethod>
+    <methodFieldName/>
+    <urlField>url</urlField>
+    <bodyField>body</bodyField>
+    <httpLogin/>
+    <httpPassword>Encrypted </httpPassword>
+    <proxyHost>172.21.1.14</proxyHost>
+    <proxyPort>12080</proxyPort>
+    <preemptive>N</preemptive>
+    <trustStoreFile/>
+    <trustStorePassword>Encrypted </trustStorePassword>
+    <headers>
+      </headers>
+    <parameters>
+      </parameters>
+    <matrixParameters>
+      </matrixParameters>
+    <result>
+      <name>_result</name>
+      <code>_code</code>
+      <response_time>_time</response_time>
+      </result>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>448</xloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
