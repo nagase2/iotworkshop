@@ -420,12 +420,12 @@
         <currency>&#xffe5;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>6</length>
+        <length>141</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>&#x7def;&#x5ea6;</name>
+        <name>&#x7d4c;&#x5ea6;</name>
         <type>Number</type>
         <format>&#x23;.&#x23;</format>
         <currency>&#xffe5;</currency>
@@ -436,7 +436,7 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>&#x7d4c;&#x5ea6;</name>
+        <name>&#x7def;&#x5ea6;</name>
         <type>Number</type>
         <format>&#x23;.&#x23;</format>
         <currency>&#xffe5;</currency>
@@ -500,8 +500,9 @@
         <class_name>EasterCalc</class_name>
 
         <class_source><![CDATA[import java.util.*;
-
-
+public static int isValueNull(int value){
+	return 0;
+}
 
 public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws Exception 
 {
@@ -527,11 +528,30 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
 		+"\"市区町村コード\":\""+  get(Fields.In, "市区町村コード").getString(r) +"\","
 		+"\"都道府県名\":\""+ get(Fields.In, "都道府県名").getString(r) +"\","
 		+"\"市区町村名\":\""+ get(Fields.In, "市区町村名").getString(r) +"\","
-
++"\"地区名\":\""+ get(Fields.In, "地区名").getString(r) +"\","
++"\"最寄駅：名称\":\""+ get(Fields.In, "最寄駅：名称").getString(r) +"\","
++"\"最寄駅：距離（分）\":"+ get(Fields.In, "最寄駅：距離（分）").getInteger(r) +","
++"\"取引価格（総額）\":"+ get(Fields.In, "取引価格（総額）").getString(r) +","
++"\"坪単価\":"+ get(Fields.In, "坪単価").getString(r) +","
++"\"間取り\":\""+ get(Fields.In, "間取り").getString(r) +"\","
++"\"面積（u）\":\""+ get(Fields.In, "面積（u）").getString(r) +"\","
++"\"取引価格（u単価）\":"+ get(Fields.In, "取引価格（u単価）").getString(r) +","
++"\"土地の形状\":\""+ get(Fields.In, "土地の形状").getString(r) +"\","
++"\"延床面積（u）\":"+ get(Fields.In, "延床面積（u）").getString(r) +","
 +"\"建築年\":\""+ get(Fields.In, "建築年").getString(r) +"\","
++"\"建物の構造\":\""+ get(Fields.In, "建物の構造").getString(r) +"\","
++"\"建物の用途\":\""+ get(Fields.In, "建物の用途").getString(r) +"\","
++"\"今後の利用目的\":\""+ get(Fields.In, "今後の利用目的").getString(r) +"\","
++"\"前面道路：方位\":\""+ get(Fields.In, "前面道路：方位").getString(r) +"\","
++"\"前面道路：種類\":\""+ get(Fields.In, "前面道路：種類").getString(r) +"\","
++"\"前面道路：幅員（ｍ）\":\""+ get(Fields.In, "前面道路：幅員（ｍ）").getString(r) +"\","
++"\"都市計画\":\""+ get(Fields.In, "都市計画").getString(r) +"\","
++"\"建ぺい率（％）\":"+ get(Fields.In, "建ぺい率（％）").getString(r) +","
++"\"容積率（％）\":\""+ get(Fields.In, "容積率（％）").getString(r) +"\","
 +"\"取引時点\":\""+ get(Fields.In, "取引時点").getString(r) +"\","
++"\"備考\":\""+ get(Fields.In, "備考").getString(r) +"\","
 
-		+"\"posted_location\": ["+ get(Fields.In, "緯度").getString(r)+"," +get(Fields.In, "経度").getString(r)+"]"
+		+"\"物件位置座標\": ["+ get(Fields.In, "緯度").getString(r)+"," +get(Fields.In, "経度").getString(r)+"]"
 		+"}\n";
 
 
@@ -595,7 +615,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
            </partitioning>
     <applicationType>JSON</applicationType>
     <method>PUT</method>
-    <url>http&#x3a;&#x2f;&#x2f;nagase2.japanwest.cloudapp.azure.com&#x3a;9200&#x2f;my_index3&#x2f;blogpost&#x2f;_bulk</url>
+    <url>http&#x3a;&#x2f;&#x2f;nagase2.japanwest.cloudapp.azure.com&#x3a;9200&#x2f;my_index8&#x2f;blogpost&#x2f;_bulk</url>
     <urlInField>N</urlInField>
     <dynamicMethod>N</dynamicMethod>
     <methodFieldName/>
@@ -623,41 +643,6 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>477</xloc>
       <yloc>96</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>log</name>
-    <type>WriteToLog</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-      <loglevel>log_level_minimal</loglevel>
-      <displayHeader>N</displayHeader>
-      <limitRows>Y</limitRows>
-      <limitRowsNumber>10</limitRowsNumber>
-      <logmessage/>
-    <fields>
-      <field>
-        <name>_result</name>
-        </field>
-      <field>
-        <name>_code</name>
-        </field>
-      <field>
-        <name>body</name>
-        </field>
-      </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>618</xloc>
-      <yloc>194</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -703,6 +688,41 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>448</xloc>
       <yloc>288</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>log</name>
+    <type>WriteToLog</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <loglevel>log_level_minimal</loglevel>
+      <displayHeader>N</displayHeader>
+      <limitRows>Y</limitRows>
+      <limitRowsNumber>10</limitRowsNumber>
+      <logmessage/>
+    <fields>
+      <field>
+        <name>_result</name>
+        </field>
+      <field>
+        <name>_code</name>
+        </field>
+      <field>
+        <name>body</name>
+        </field>
+      </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>618</xloc>
+      <yloc>194</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
