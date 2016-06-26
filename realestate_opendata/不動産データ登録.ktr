@@ -686,7 +686,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
       </result>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>448</xloc>
+      <xloc>480</xloc>
       <yloc>288</yloc>
       <draw>Y</draw>
       </GUI>
