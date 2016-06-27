@@ -576,7 +576,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
 	Object[] r = null;
 
 	//データを纏める件数をここで調整
-	for(int i=0;i<5;i++){
+	for(int i=0;i<500;i++){
 
 		//一行すすめる
   		 r=getRow();
