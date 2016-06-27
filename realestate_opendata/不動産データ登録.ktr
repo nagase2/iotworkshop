@@ -77,11 +77,32 @@
     <notepad>
       <note>PUT my_index8&#xa;&#x7b;&#xa;  &#x22;mappings&#x22;&#x3a; &#x7b;&#xa;    &#x22;blogpost&#x22;&#x3a; &#x7b; &#xa;      &#x22;properties&#x22;&#x3a; &#x7b; &#xa;&#xa;        &#x22;No&#x22;&#x3a;     &#x7b; &#xa;           &#x22;type&#x22;&#x3a; &#x22;long&#x22;&#xa;        &#x7d;, &#xa;        &#x22;&#x7a2e;&#x985e;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;,&#xa;        &#x22;&#x5730;&#x57df;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;,&#xa;        &#x22;&#x5e02;&#x533a;&#x753a;&#x6751;&#x30b3;&#x30fc;&#x30c9;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;,  &#xa;        &#x22;&#x90fd;&#x9053;&#x5e9c;&#x770c;&#x540d;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;, &#xa;        &#x22;&#x5e02;&#x533a;&#x753a;&#x6751;&#x540d;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;, &#xa;        &#x22;&#x5730;&#x533a;&#x540d;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;, &#xa;        &#x22;&#x6700;&#x5bc4;&#x99c5;&#xff1a;&#x540d;&#x79f0;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;, &#xa;        &#x22;&#x6700;&#x5bc4;&#x99c5;&#xff1a;&#x8ddd;&#x96e2;&#xff08;&#x5206;&#xff09;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a; &#x22;long&#x22;&#xa;        &#x7d;, &#xa;        &#x22;&#x53d6;&#x5f15;&#x4fa1;&#x683c;&#xff08;&#x7dcf;&#x984d;&#xff09;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a; &#x22;long&#x22;&#xa;        &#x7d;, &#xa;        &#x22;&#x576a;&#x5358;&#x4fa1;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a; &#x22;long&#x22;&#xa;        &#x7d;, &#xa;        &#x22;&#x9593;&#x53d6;&#x308a;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;, &#xa;        &#x22;&#x9762;&#x7a4d;&#xff08;u&#xff09;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a; &#x22;long&#x22;&#xa;        &#x7d;, &#xa;        &#x22;&#x53d6;&#x5f15;&#x4fa1;&#x683c;&#xff08;u&#x5358;&#x4fa1;&#xff09;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a; &#x22;long&#x22;&#xa;        &#x7d;, &#xa;        &#x22;&#x571f;&#x5730;&#x306e;&#x5f62;&#x72b6;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;,&#xa;        &#x22;&#x9593;&#x53e3;&#x22;&#x3a;  &#x7b;&#xa;           &#x22;type&#x22;&#x3a; &#x22;long&#x22;&#xa;        &#x7d;,&#xa;        &#x22;&#x5ef6;&#x5e8a;&#x9762;&#x7a4d;&#xff08;u&#xff09;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a; &#x22;long&#x22;&#xa;        &#x7d;,&#xa;        &#x22;&#x5efa;&#x7bc9;&#x5e74;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;date&#x22;, &#xa;          &#x22;format&#x22;&#x3a; &#x22;YYYY&#x22; &#xa;        &#x7d;,&#xa;        &#x22;&#x5efa;&#x7269;&#x306e;&#x69cb;&#x9020;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;,&#xa;        &#x22;&#x5efa;&#x7269;&#x306e;&#x7528;&#x9014;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;,&#xa;        &#x22;&#x4eca;&#x5f8c;&#x306e;&#x5229;&#x7528;&#x76ee;&#x7684;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;,&#xa;        &#x22;&#x524d;&#x9762;&#x9053;&#x8def;&#xff1a;&#x65b9;&#x4f4d;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;,&#xa;        &#x22;&#x524d;&#x9762;&#x9053;&#x8def;&#xff1a;&#x7a2e;&#x985e;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;,&#xa;        &#x22;&#x524d;&#x9762;&#x9053;&#x8def;&#xff1a;&#x5e45;&#x54e1;&#xff08;&#xff4d;&#xff09;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a; &#x22;float&#x22;&#xa;        &#x7d;,&#xa;        &#x22;&#x90fd;&#x5e02;&#x8a08;&#x753b;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;,&#xa;        &#x22;&#x5efa;&#x307a;&#x3044;&#x7387;&#xff08;&#xff05;&#xff09;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22; &#x3a; &#x22;integer&#x22;&#xa;        &#x7d;,&#xa;        &#x22;&#x5bb9;&#x7a4d;&#x7387;&#xff08;&#xff05;&#xff09;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22; &#x3a; &#x22;integer&#x22;&#xa;        &#x7d;,&#xa;        &#x22;&#x53d6;&#x5f15;&#x6642;&#x70b9;&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;date&#x22;, &#xa;          &#x22;format&#x22;&#x3a; &#x22;YYYY&#x2f;MM&#x2f;dd&#x22; &#xa;        &#x7d;,&#xa;        &#x22;&#x5099;&#x8003;&#x22;&#x3a; &#x7b;&#xa;		    &#x22;type&#x22;&#x3a; &#x22;string&#x22;,&#xa;		    &#x22;fields&#x22;&#x3a; &#x7b;&#xa;        	&#x22;&#x5099;&#x8003;raw&#x22;&#x3a; &#x7b; &#x22;type&#x22;&#x3a; &#x22;string&#x22;, &#x22;index&#x22;&#x3a; &#x22;not_analyzed&#x22; &#x7d;&#xa;		        &#x7d;&#xa;        &#x7d;,&#xa;        &#x22;&#x7269;&#x4ef6;&#x4f4d;&#x7f6e;&#x5ea7;&#x6a19;&#x22;&#x3a; &#x7b;&#xa;          &#x22;type&#x22;&#x3a; &#x22;geo_point&#x22;&#xa;        &#x7d;&#xa;      &#x7d;&#xa;    &#x7d;&#xa;  &#x7d;&#xa;&#x7d;&#xa;&#xa;PUT my_index8&#x2f;blogpost&#x2f;_bulk&#xa;&#x7b; &#x22;create&#x22; &#x3a; &#x7b; &#x22;_retry_on_conflict&#x22; &#x3a; 2&#x7d; &#x7d;&#xa;&#x7b;&#x22;No&#x22;&#x3a;&#x22;25&#x22;,&#x22;&#x7a2e;&#x985e;&#x22;&#x3a;&#x22;&#x5b85;&#x5730;&#x28;&#x571f;&#x5730;&#x3068;&#x5efa;&#x7269;&#x29;&#x22;,&#x22;&#x5730;&#x57df;&#x22;&#x3a;&#x22;&#x4f4f;&#x5b85;&#x5730;&#x22;,&#x22;&#x5e02;&#x533a;&#x753a;&#x6751;&#x30b3;&#x30fc;&#x30c9;&#x22;&#x3a;&#x22;23101&#x22;,&#x22;&#x90fd;&#x9053;&#x5e9c;&#x770c;&#x540d;&#x22;&#x3a;&#x22;&#x611b;&#x77e5;&#x770c;&#x22;,&#x22;&#x5e02;&#x533a;&#x753a;&#x6751;&#x540d;&#x22;&#x3a;&#x22;&#x540d;&#x53e4;&#x5c4b;&#x5e02;&#x5343;&#x7a2e;&#x533a;&#x22;,&#x22;&#x5730;&#x533a;&#x540d;&#x22;&#x3a;&#x22;&#x8d64;&#x5742;&#x753a;&#x22;,&#x22;&#x6700;&#x5bc4;&#x99c5;&#xff1a;&#x540d;&#x79f0;&#x22;&#x3a;&#x22;&#x8336;&#x5c4b;&#x30b1;&#x5742;&#x22;,&#x22;&#x6700;&#x5bc4;&#x99c5;&#xff1a;&#x8ddd;&#x96e2;&#xff08;&#x5206;&#xff09;&#x22;&#x3a;&#x22;7&#x22;,&#x22;&#x53d6;&#x5f15;&#x4fa1;&#x683c;&#xff08;&#x7dcf;&#x984d;&#xff09;&#x22;&#x3a;&#x22;24000000&#x22;,&#x22;&#x576a;&#x5358;&#x4fa1;&#x22;&#x3a;null,&#x22;&#x9593;&#x53d6;&#x308a;&#x22;&#x3a;&#x22;null&#x22;,&#x22;&#x9762;&#x7a4d;&#xff08;u&#xff09;&#x22;&#x3a;&#x22;105&#x22;,&#x22;&#x53d6;&#x5f15;&#x4fa1;&#x683c;&#xff08;u&#x5358;&#x4fa1;&#xff09;&#x22;&#x3a;null,&#x22;&#x571f;&#x5730;&#x306e;&#x5f62;&#x72b6;&#x22;&#x3a;&#x22;&#x9577;&#x65b9;&#x5f62;&#x22;,&#x22;&#x5ef6;&#x5e8a;&#x9762;&#x7a4d;&#xff08;u&#xff09;&#x22;&#x3a;&#x22;95&#x22;,&#x22;&#x5efa;&#x7bc9;&#x5e74;&#x22;&#x3a;&#x22;2011&#x22;,&#x22;&#x5efa;&#x7269;&#x306e;&#x69cb;&#x9020;&#x22;&#x3a;&#x22;&#x9244;&#x9aa8;&#x9020;&#x22;,&#x22;&#x5efa;&#x7269;&#x306e;&#x7528;&#x9014;&#x22;&#x3a;&#x22;&#x4f4f;&#x5b85;&#x22;,&#x22;&#x4eca;&#x5f8c;&#x306e;&#x5229;&#x7528;&#x76ee;&#x7684;&#x22;&#x3a;&#x22;null&#x22;,&#x22;&#x524d;&#x9762;&#x9053;&#x8def;&#xff1a;&#x65b9;&#x4f4d;&#x22;&#x3a;&#x22;&#x5317;&#x6771;&#x22;,&#x22;&#x524d;&#x9762;&#x9053;&#x8def;&#xff1a;&#x7a2e;&#x985e;&#x22;&#x3a;&#x22;&#x5e02;&#x9053;&#x22;,&#x22;&#x524d;&#x9762;&#x9053;&#x8def;&#xff1a;&#x5e45;&#x54e1;&#xff08;&#xff4d;&#xff09;&#x22;&#x3a;&#x22;6.3&#x22;,&#x22;&#x90fd;&#x5e02;&#x8a08;&#x753b;&#x22;&#x3a;&#x22;&#x7b2c;&#xff11;&#x7a2e;&#x4f4e;&#x5c64;&#x4f4f;&#x5c45;&#x5c02;&#x7528;&#x5730;&#x57df;&#x22;,&#x22;&#x5efa;&#x307a;&#x3044;&#x7387;&#xff08;&#xff05;&#xff09;&#x22;&#x3a;&#x22;50&#x22;,&#x22;&#x5bb9;&#x7a4d;&#x7387;&#xff08;&#xff05;&#xff09;&#x22;&#x3a;&#x22;150&#x22;,&#x22;&#x53d6;&#x5f15;&#x6642;&#x70b9;&#x22;&#x3a;&#x22;2011&#x2f;07&#x2f;01&#x22;,&#x22;&#x5099;&#x8003;&#x22;&#x3a;&#x22;null&#x22;,&#x22;&#x7269;&#x4ef6;&#x4f4d;&#x7f6e;&#x5ea7;&#x6a19;&#x22;&#x3a; &#x5b;136.9,35.2&#x5d;&#x7d;&#xa;</note>
       <xloc>112</xloc>
-      <yloc>272</yloc>
-      <width>3762</width>
+      <yloc>274</yloc>
+      <width>5026</width>
       <heigth>2135</heigth>
       <fontname>.SF NS Text</fontname>
       <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
+    <notepad>
+      <note>http&#x3a;&#x2f;&#x2f;nagase2.japanwest.cloudapp.azure.com&#x3a;9200&#x2f;my_index8&#x2f;blogpost&#x2f;_bulk</note>
+      <xloc>535</xloc>
+      <yloc>321</yloc>
+      <width>474</width>
+      <heigth>28</heigth>
+      <fontname>&#x30e1;&#x30a4;&#x30ea;&#x30aa;</fontname>
+      <fontsize>9</fontsize>
       <fontbold>N</fontbold>
       <fontitalic>N</fontitalic>
       <fontcolorred>0</fontcolorred>
@@ -112,9 +133,9 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>&#x2f;Users&#x2f;nagase&#x2f;iotworkshop&#x2f;realestate_opendata&#x2f;&#x6771;&#x4eac;&#x540d;&#x53e4;&#x5c4b;&#x5927;&#x962a;_&#x4e0d;&#x52d5;&#x7523;_mini.csv</filename>
+    <filename>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;&#x6771;&#x4eac;&#x540d;&#x53e4;&#x5c4b;&#x5927;&#x962a;_&#x4e0d;&#x52d5;&#x7523;_SJIS2.csv</filename>
     <filename_field/>
-    <rownum_field/>
+    <rownum_field>SJIS</rownum_field>
     <include_filename>N</include_filename>
     <separator>,</separator>
     <enclosure>&#x22;</enclosure>
@@ -210,7 +231,7 @@
         <currency>&#xffe5;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>6</length>
+        <length>8</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -298,7 +319,7 @@
         <currency>&#xffe5;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>4</length>
+        <length>15</length>
         <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -325,13 +346,24 @@
         <trim_type>none</trim_type>
       </field>
       <field>
+        <name>__&#x5efa;&#x7bc9;&#x5e74;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>5</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
         <name>&#x5efa;&#x7269;&#x306e;&#x69cb;&#x9020;</name>
         <type>String</type>
         <format/>
         <currency>&#xffe5;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>3</length>
+        <length>5</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -342,7 +374,7 @@
         <currency>&#xffe5;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>8</length>
+        <length>9</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -386,7 +418,7 @@
         <currency>&#xffe5;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>4</length>
+        <length>15</length>
         <precision>1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -397,7 +429,7 @@
         <currency>&#xffe5;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>11</length>
+        <length>12</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -435,25 +467,25 @@
         <trim_type>none</trim_type>
       </field>
       <field>
+        <name>__&#x53d6;&#x5f15;&#x6642;&#x70b9;</name>
+        <type>String</type>
+        <format/>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>10</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
         <name>&#x5099;&#x8003;</name>
         <type>String</type>
         <format/>
         <currency>&#xffe5;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>141</length>
+        <length>6</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>&#x7d4c;&#x5ea6;</name>
-        <type>Number</type>
-        <format>&#x23;.&#x23;</format>
-        <currency>&#xffe5;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>9</length>
-        <precision>6</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
@@ -463,7 +495,18 @@
         <currency>&#xffe5;</currency>
         <decimal>.</decimal>
         <group>,</group>
-        <length>10</length>
+        <length>15</length>
+        <precision>6</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>&#x7d4c;&#x5ea6;</name>
+        <type>Number</type>
+        <format>&#x23;.&#x23;</format>
+        <currency>&#xffe5;</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <length>15</length>
         <precision>6</precision>
         <trim_type>none</trim_type>
       </field>
@@ -636,7 +679,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
            </partitioning>
     <applicationType>JSON</applicationType>
     <method>PUT</method>
-    <url>http&#x3a;&#x2f;&#x2f;nagase2.japanwest.cloudapp.azure.com&#x3a;9200&#x2f;my_index8&#x2f;blogpost&#x2f;_bulk</url>
+    <url>http&#x3a;&#x2f;&#x2f;172.19.6.89&#x3a;8200&#x2f;my_index10&#x2f;blogpost&#x2f;_bulk</url>
     <urlInField>N</urlInField>
     <dynamicMethod>N</dynamicMethod>
     <methodFieldName/>
@@ -644,8 +687,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
     <bodyField>body</bodyField>
     <httpLogin/>
     <httpPassword>Encrypted </httpPassword>
-    <proxyHost/>
-    <proxyPort/>
+    <proxyHost>172.21.1.14</proxyHost>
+    <proxyPort>12080</proxyPort>
     <preemptive>N</preemptive>
     <trustStoreFile/>
     <trustStorePassword>Encrypted </trustStorePassword>
@@ -653,8 +696,6 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
       </headers>
     <parameters>
       </parameters>
-    <matrixParameters>
-      </matrixParameters>
     <result>
       <name>_result</name>
       <code>_code</code>
@@ -698,8 +739,6 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
       </headers>
     <parameters>
       </parameters>
-    <matrixParameters>
-      </matrixParameters>
     <result>
       <name>_result</name>
       <code>_code</code>
