@@ -567,6 +567,13 @@
 public static int isValueNull(int value){
 	return 0;
 }
+public static String getDateValue(String value){
+	if(value==null||value=="null"){
+		return null;
+	}else{
+		return "\""+value+"\"";
+	}
+}
 
 public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws Exception 
 {
@@ -602,7 +609,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
 +"\"取引価格（u単価）\":"+ get(Fields.In, "取引価格（u単価）").getString(r) +","
 +"\"土地の形状\":\""+ get(Fields.In, "土地の形状").getString(r) +"\","
 +"\"延床面積（u）\":"+ get(Fields.In, "延床面積（u）").getString(r) +","
-+"\"建築年\":\""+ get(Fields.In, "建築年").getString(r) +"\","
++"\"建築年\":"+ getDateValue(get(Fields.In, "建築年").getString(r)) +","
 +"\"建物の構造\":\""+ get(Fields.In, "建物の構造").getString(r) +"\","
 +"\"建物の用途\":\""+ get(Fields.In, "建物の用途").getString(r) +"\","
 +"\"今後の利用目的\":\""+ get(Fields.In, "今後の利用目的").getString(r) +"\","
@@ -612,7 +619,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
 +"\"都市計画\":\""+ get(Fields.In, "都市計画").getString(r) +"\","
 +"\"建ぺい率（％）\":"+ get(Fields.In, "建ぺい率（％）").getString(r) +","
 +"\"容積率（％）\":"+ get(Fields.In, "容積率（％）").getString(r) +","
-+"\"取引時点\":\""+ get(Fields.In, "取引時点").getString(r) +"\","
++"\"取引時点\":"+ getDateValue(get(Fields.In, "取引時点").getString(r)) +","
 +"\"備考\":\""+ get(Fields.In, "備考").getString(r) +"\","
 
 		+"\"物件位置座標\": ["+ get(Fields.In, "緯度").getString(r)+"," +get(Fields.In, "経度").getString(r)+"]"
@@ -679,7 +686,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
            </partitioning>
     <applicationType>JSON</applicationType>
     <method>PUT</method>
-    <url>http&#x3a;&#x2f;&#x2f;nagase2.japanwest.cloudapp.azure.com&#x3a;9200&#x2f;my_index11&#x2f;blogpost&#x2f;_bulk</url>
+    <url>http&#x3a;&#x2f;&#x2f;nagase2.japanwest.cloudapp.azure.com&#x3a;9200&#x2f;my_index12&#x2f;blogpost&#x2f;_bulk</url>
     <urlInField>N</urlInField>
     <dynamicMethod>N</dynamicMethod>
     <methodFieldName/>
