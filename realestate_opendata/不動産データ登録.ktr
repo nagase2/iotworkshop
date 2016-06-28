@@ -137,6 +137,27 @@
       <bordercolorblue>100</bordercolorblue>
       <drawshadow>Y</drawshadow>
     </notepad>
+    <notepad>
+      <note>POST &#x2f;index7&#x2f;testdoc&#x2f;_bulk&#xa;&#x7b; &#x22;update&#x22; &#x3a; &#x7b;&#x22;_id&#x22; &#x3a; &#x22;999&#x22;, &#x22;_retry_on_conflict&#x22; &#x3a; 2&#x7d;&#x7d;&#xa;&#x7b; &#x22;doc&#x22; &#x3a;&#x7b;&#x22;&#x4f1a;&#x793e;&#x30b3;&#x30fc;&#x30c9;&#x22;&#x3a;&#x22;S500&#x22;,&#x22;&#x52d8;&#x5b9a;&#x79d1;&#x76ee;&#x22;&#x3a;&#x22;A1130&#x22;,&#x22;&#x30b0;&#x30eb;&#x30fc;&#x30d7;&#x30b3;&#x30fc;&#x30c9;&#x22;&#x3a;&#x22;A194C&#x22;,&#x22;&#x53ce;&#x652f;&#x5148;&#x30b3;&#x30fc;&#x30c9;&#x22;&#x3a;&#x22;A1699999&#x22;,&#x22;&#x53ce;&#x652f;&#x4f1d;&#x7968;&#x756a;&#x53f7;&#x22;&#x3a;&#x22;L000691030&#x22;,&#x22;&#x4f1d;&#x7968;&#x660e;&#x7d30;&#x756a;&#x53f7;&#x22;&#x3a;&#x22;3&#x22;,&#x22;&#x53ce;&#x652f;&#x4e88;&#x5b9a;&#x65e5;&#x22;&#x3a;&#x22;20150731&#x22;,&#x22;&#x4f1d;&#x7968;&#x65e5;&#x4ed8;&#x22;&#x3a;&#x22;20150507&#x22;,&#x22;&#x8ee2;&#x8a18;&#x65e5;&#x4ed8;&#x22;&#x3a;&#x22;20150430&#x22;,&#x22;&#x6c7a;&#x6e08;&#x5b8c;&#x4e86;&#x65e5;&#x22;&#x3a;&#x22;20150430&#x22;,&#x22;&#x6570;&#x91cf;&#x22;&#x3a;&#x22;999&#x22;,&#x22;&#x5358;&#x4fa1;&#x22;&#x3a;&#x22;999&#x22;,&#x22;&#x901a;&#x8ca8;&#x30b3;&#x30fc;&#x30c9;&#x22;&#x3a;&#x22;JPY&#x22;,&#x22;&#x7a0e;&#x629c;&#x91d1;&#x984d;&#x22;&#x3a;&#x22;1229&#x22;,&#x22;&#x7a0e;&#x8fbc;&#x91d1;&#x984d;&#x22;&#x3a;&#x22;1234&#x22;,&#x22;&#x7a0e;&#x629c;&#x5916;&#x8ca8;&#x91d1;&#x984d;&#x22;&#x3a;&#x22;3334&#x22;,&#x22;&#x7a0e;&#x8fbc;&#x5916;&#x8ca8;&#x91d1;&#x984d;&#x22;&#x3a;&#x22;-1938&#x22;,&#x22;&#x8cb7;&#x5148;&#xff0f;&#x58f2;&#x5148;&#x30b3;&#x30fc;&#x30c9;&#x22;&#x3a;&#x22;A1699999&#x22;,&#x22;&#x76f8;&#x624b;&#x79d1;&#x76ee;&#x22;&#x3a;&#x22;A3649&#x22;,&#x22;&#x696d;&#x52d9;&#x533a;&#x5206;&#x22;&#x3a;&#x22;x&#x22;,&#x22;&#x5099;&#x8003;&#x22;&#x3a;&#x22;&#x5099;&#x8003;&#x30c7;&#x30fc;&#x30bf;&#x3067;&#x3059;&#x3002;&#x672c;&#x65e5;&#x306f;&#x6674;&#x5929;&#x4e5f;&#x22;,&#x22;&#x6c7a;&#x6e08;&#x660e;&#x7d30;&#x30d5;&#x30e9;&#x30b0;&#x22;&#x3a;&#x22;X&#x22;,&#x22;&#x8a08;&#x4e0a;&#x4f1d;&#x7968;&#x8d77;&#x7968;&#x30e6;&#x30fc;&#x30b6;ID&#x22;&#x3a;&#x22;A2009519&#x22;,&#x22;&#x30ab;&#x30b9;&#x30bf;&#x30de;&#x5ea7;&#x6a19;&#x22;&#x3a; &#x5b; 111.129, 31.31 &#x5d;,&#x22;&#x5ea7;&#x6a19;&#xff11;&#x22;&#x3a; &#x5b; 111.129, 31.31 &#x5d;,&#x22;&#x5ea7;&#x6a19;&#xff12;&#x22;&#x3a; &#x5b; 111.129, 31.31 &#x5d; &#x7d;, &#x22;doc_as_upsert&#x22; &#x3a; true &#x7d;&#xa;</note>
+      <xloc>608</xloc>
+      <yloc>592</yloc>
+      <width>3911</width>
+      <heigth>79</heigth>
+      <fontname>.SF NS Text</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <order>
   <hop> <from>CSV file input 2</from><to>JAVA</to><enabled>Y</enabled> </hop>
