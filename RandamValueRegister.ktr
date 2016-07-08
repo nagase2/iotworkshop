@@ -74,6 +74,27 @@
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
+    <notepad>
+      <note>&#x30e9;&#x30f3;&#x30c0;&#x30e0;&#x5024;&#x3092;&#x751f;&#x6210;&#x3057;&#x3066;Elasticsearch&#x306b;&#x30c7;&#x30fc;&#x30bf;&#x3092;&#x767b;&#x9332;&#x3059;&#x308b;&#x3002;&#xa;Generate Rows&#x3092;&#x30af;&#x30ea;&#x30c3;&#x30af;&#x3057;&#x3066;&#x3001;&#x63a5;&#x7d9a;&#x5148;URL&#x3001;&#x751f;&#x6210;&#x884c;&#x6570;&#x3092;&#x5909;&#x66f4;&#x3059;&#x308b;&#x3002;&#xa;&#x30d7;&#x30ed;&#x30ad;&#x30b7;&#x304c;&#x9593;&#x306b;&#x3044;&#x308b;&#x74b0;&#x5883;&#x306e;&#x5834;&#x5408;&#x3001;&#x30d7;&#x30ed;&#x30ad;&#x30b7;&#x306e;&#x8a2d;&#x5b9a;&#x3082;&#x5fc5;&#x8981;&#x3068;&#x306a;&#x308b;&#x3002;</note>
+      <xloc>96</xloc>
+      <yloc>416</yloc>
+      <width>391</width>
+      <heigth>69</heigth>
+      <fontname>.SF NS Text</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>232</backgroundcolorred>
+      <backgroundcolorgreen>232</backgroundcolorgreen>
+      <backgroundcolorblue>232</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <order>
   <hop> <from>REST Client</from><to>Write to log</to><enabled>Y</enabled> </hop>
@@ -155,7 +176,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>http&#x3a;&#x2f;&#x2f;192.168.163.130&#x3a;9200&#x2f;</nullif>
+        <nullif>http&#x3a;&#x2f;&#x2f;nagase2.japanwest.cloudapp.azure.com&#x3a;9200&#x2f;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -185,7 +206,7 @@
         <set_empty_string>N</set_empty_string>
       </field>
     </fields>
-    <limit>100</limit>
+    <limit>10000</limit>
     <never_ending>N</never_ending>
     <interval_in_ms>5000</interval_in_ms>
     <row_time_field>now</row_time_field>
@@ -248,7 +269,7 @@
            </partitioning>
     <applicationType>JSON</applicationType>
     <method>POST</method>
-    <url>http&#x3a;&#x2f;&#x2f;192.168.121.158&#x3a;9200&#x2f;megacorp&#x2f;employee&#x2f;777</url>
+    <url>http&#x3a;&#x2f;&#x2f;nagase2.japanwest.cloudapp.azure.com&#x3a;9200&#x2f;</url>
     <urlInField>Y</urlInField>
     <dynamicMethod>N</dynamicMethod>
     <methodFieldName/>
@@ -273,6 +294,8 @@
         <name>name1</name>
         </parameter>
       </parameters>
+    <matrixParameters>
+      </matrixParameters>
     <result>
       <name>_id</name>
       <code>code</code>
