@@ -74,111 +74,33 @@
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
+    <notepad>
+      <note>&#x30de;&#x30c3;&#x30d4;&#x30f3;&#x30b0;&#x30b5;&#x30f3;&#x30d7;&#x30eb;&#xa;&#xa;PUT my_index &#xa;&#x7b;&#xa;  &#x22;mappings&#x22;&#x3a; &#x7b;&#xa;    &#x22;blogpost&#x22;&#x3a; &#x7b; &#xa;      &#x22;properties&#x22;&#x3a; &#x7b; &#xa;        &#x22;title_str&#x22;&#x3a; &#x7b;&#xa;          &#x22;type&#x22;&#x3a; &#x22;multi_field&#x22;,&#xa;             &#x22;fields&#x22;&#x3a; &#x7b;&#xa;               &#x22;title_str&#x22;&#x3a; &#x7b;&#xa;                  &#x22;type&#x22;&#x3a; &#x22;string&#x22;,&#xa;                  &#x22;index&#x22; &#x3a; &#x22;analyzed&#x22;&#xa;              &#x7d;,&#xa;              &#x22;full&#x22;&#x3a; &#x7b;&#xa;                  &#x22;type&#x22;&#x3a; &#x22;string&#x22;,&#xa;                  &#x22;index&#x22; &#x3a; &#x22;not_analyzed&#x22;&#xa;              &#x7d;&#xa;           &#x7d;&#xa;        &#x7d;, &#xa;        &#x22;body&#x22;&#x3a;     &#x7b; &#xa;           &#x22;type&#x22;&#x3a; &#x22;string&#x22;,  &#xa;           &#x22;index&#x22;&#x3a; &#x22;analyzed&#x22;&#xa;        &#x7d;, &#xa;        &#x22;user_id&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;,&#xa;        &#x22;category&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;string&#x22;, &#xa;          &#x22;index&#x22;&#x3a;  &#x22;not_analyzed&#x22;&#xa;        &#x7d;,&#xa;        &#x22;view_count&#x22; &#x3a; &#x7b; &#x22;type&#x22; &#x3a; &#x22;long&#x22;&#x7d;,&#xa;        &#x22;update_count&#x22;&#x3a; &#x7b; &#x22;type&#x22; &#x3a; &#x22;integer&#x22;&#x7d;,&#xa;        &#x22;created_date&#x22;&#x3a;  &#x7b;&#xa;          &#x22;type&#x22;&#x3a;   &#x22;date&#x22;, &#xa;          &#x22;format&#x22;&#x3a; &#x22;YYYY&#x2f;MM&#x2f;dd&#x27;T&#x27;HH&#x3a;mm&#x3a;ssZ&#x22; &#xa;        &#x7d;,&#xa;        &#x22;posted_location&#x22;&#x3a; &#x7b;&#xa;          &#x22;type&#x22;&#x3a; &#x22;geo_point&#x22;&#xa;        &#x7d;&#xa;      &#x7d;&#xa;    &#x7d;&#xa;  &#x7d;&#xa;&#x7d;</note>
+      <xloc>160</xloc>
+      <yloc>272</yloc>
+      <width>286</width>
+      <heigth>733</heigth>
+      <fontname>.SF NS Text</fontname>
+      <fontsize>13</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>230</backgroundcolorred>
+      <backgroundcolorgreen>230</backgroundcolorgreen>
+      <backgroundcolorblue>230</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <order>
   <hop> <from>CSV file input 2</from><to>JAVA</to><enabled>Y</enabled> </hop>
   <hop> <from>JAVA</from><to>REST Client</to><enabled>Y</enabled> </hop>
   <hop> <from>REST Client</from><to>log</to><enabled>Y</enabled> </hop>
   </order>
-  <step>
-    <name>JAVA</name>
-    <type>UserDefinedJavaClass</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-
-    <definitions>
-        <definition>
-        <class_type>TRANSFORM_CLASS</class_type>
-
-        <class_name>EasterCalc</class_name>
-
-        <class_source><![CDATA[import java.util.*;
-
-
-
-public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws Exception 
-{
-	//RESTに渡す文字列
-	String body="";
-
-	Object[] r = null;
-
-	//データを纏める件数をここで調整
-	for(int i=0;i<5;i++){
-
-		//一行すすめる
-  		 r=getRow();
-
- 		 if (r==null)
-  		{
- 			break;
-  		}
-
-		String firstLine ="{ \"create\" : { \"_retry_on_conflict\" : 2} }\n";
-		String secondLine = "{"
-		+"\"title_str\":\""+ get(Fields.In, "タイトル").getString(r) +"\","
-		+"\"body\":\""+ get(Fields.In, "本文").getString(r) +"\","
-		+"\"created_date\":\""+  get(Fields.In, "作成日").getString(r) +"\","
-		+"\"update_count\":\""+ get(Fields.In, "更新カウント").getString(r) +"\","
-		+"\"view_count\":\""+ get(Fields.In, "ビューカウント").getString(r) +"\","
-		+"\"posted_location\": ["+ get(Fields.In, "緯度").getString(r)+"," +get(Fields.In, "経度").getString(r)+"]"
-		+"}\n";
-
-
-		//取得したデータをbody（戻り値）に詰める
-		body+=firstLine+secondLine;
-
-
-	}
-   Object[] outputRowData = RowDataUtil.resizeArray(r, data.outputRowMeta.size());
-	int outputIndex = getInputRowMeta().size();
-
-    //OutPutの３番めに値を追加(０スタート）
-   outputRowData[outputIndex++] =body;
-
-　 //行出力
-   putRow(data.outputRowMeta, outputRowData);
-
-   if (r==null)
-   {
-	//処理を終了して次の処理へ進む
-    setOutputDone();
-	return false;
-   }
-   //継続
-   return true;
-}
-
-
-]]></class_source>
-        </definition>
-    </definitions>
-    <fields>
-        <field>
-        <field_name>body</field_name>
-
-        <field_type>String</field_type>
-
-        <field_length>-1</field_length>
-
-        <field_precision>-1</field_precision>
-
-        </field>
-    </fields><clear_result_fields>N</clear_result_fields>
-<info_steps></info_steps><target_steps></target_steps><usage_parameters></usage_parameters>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>292</xloc>
-      <yloc>190</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
   <step>
     <name>CSV file input 2</name>
     <type>CsvInput</type>
@@ -190,7 +112,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <filename>C&#x3a;&#x5c;repos&#x5c;iotworkshop&#x5c;SampleData.csv</filename>
+    <filename>&#x2f;Users&#x2f;nagase&#x2f;iotworkshop&#x2f;SampleData.csv</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -302,49 +224,6 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
     </step>
 
   <step>
-    <name>REST Client</name>
-    <type>Rest</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <applicationType>JSON</applicationType>
-    <method>PUT</method>
-    <url>http&#x3a;&#x2f;&#x2f;search-namazon-eue2qyuxi7t67k3b67qytkcq3q.ap-northeast-1.es.amazonaws.com&#x2f;my_index&#x2f;blogpost&#x2f;_bulk</url>
-    <urlInField>N</urlInField>
-    <dynamicMethod>N</dynamicMethod>
-    <methodFieldName/>
-    <urlField>url</urlField>
-    <bodyField>body</bodyField>
-    <httpLogin/>
-    <httpPassword>Encrypted </httpPassword>
-    <proxyHost>172.21.1.14</proxyHost>
-    <proxyPort>12080</proxyPort>
-    <preemptive>N</preemptive>
-    <trustStoreFile/>
-    <trustStorePassword>Encrypted </trustStorePassword>
-    <headers>
-      </headers>
-    <parameters>
-      </parameters>
-    <result>
-      <name>_result</name>
-      <code>_code</code>
-      <response_time>_time</response_time>
-      </result>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>477</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>G&#x2f;L &#x52d8;&#x5b9a;&#x30de;&#x30b9;&#x30bf;</name>
     <type>TableInput</type>
     <description/>
@@ -367,6 +246,150 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws E
       <xloc>130</xloc>
       <yloc>257</yloc>
       <draw>N</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>JAVA</name>
+    <type>UserDefinedJavaClass</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+
+    <definitions>
+        <definition>
+        <class_type>TRANSFORM_CLASS</class_type>
+
+        <class_name>EasterCalc</class_name>
+
+        <class_source><![CDATA[import java.util.*;
+
+
+
+public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws Exception 
+{
+	//RESTに渡す文字列
+	String body="";
+
+	Object[] r = null;
+
+	//データを纏める件数をここで調整
+	for(int i=0;i<5;i++){
+
+		//一行すすめる
+  		 r=getRow();
+
+ 		 if (r==null)
+  		{
+ 			break;
+  		}
+
+		String firstLine ="{ \"create\" : { \"_retry_on_conflict\" : 2} }\n";
+		String secondLine = "{"
+		+"\"title_str\":\""+ get(Fields.In, "タイトル").getString(r) +"\","
+		+"\"body\":\""+ get(Fields.In, "本文").getString(r) +"\","
+		+"\"created_date\":\""+  get(Fields.In, "作成日").getString(r) +"\","
+		+"\"update_count\":\""+ get(Fields.In, "更新カウント").getString(r) +"\","
+		+"\"view_count\":\""+ get(Fields.In, "ビューカウント").getString(r) +"\","
+		+"\"posted_location\": ["+ get(Fields.In, "緯度").getString(r)+"," +get(Fields.In, "経度").getString(r)+"]"
+		+"}\n";
+
+
+		//取得したデータをbody（戻り値）に詰める
+		body+=firstLine+secondLine;
+
+
+	}
+   Object[] outputRowData = RowDataUtil.resizeArray(r, data.outputRowMeta.size());
+	int outputIndex = getInputRowMeta().size();
+
+    //OutPutの３番めに値を追加(０スタート）
+   outputRowData[outputIndex++] =body;
+
+　 //行出力
+   putRow(data.outputRowMeta, outputRowData);
+
+   if (r==null)
+   {
+	//処理を終了して次の処理へ進む
+    setOutputDone();
+	return false;
+   }
+   //継続
+   return true;
+}
+
+
+]]></class_source>
+        </definition>
+    </definitions>
+    <fields>
+        <field>
+        <field_name>body</field_name>
+
+        <field_type>String</field_type>
+
+        <field_length>-1</field_length>
+
+        <field_precision>-1</field_precision>
+
+        </field>
+    </fields><clear_result_fields>N</clear_result_fields>
+<info_steps></info_steps><target_steps></target_steps><usage_parameters></usage_parameters>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>292</xloc>
+      <yloc>190</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>REST Client</name>
+    <type>Rest</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <applicationType>JSON</applicationType>
+    <method>PUT</method>
+    <url>http&#x3a;&#x2f;&#x2f;nagase2.japanwest.cloudapp.azure.com&#x3a;5601&#x2f;my_index88&#x2f;blogpost&#x2f;_bulk</url>
+    <urlInField>N</urlInField>
+    <dynamicMethod>N</dynamicMethod>
+    <methodFieldName/>
+    <urlField>url</urlField>
+    <bodyField>body</bodyField>
+    <httpLogin/>
+    <httpPassword>Encrypted </httpPassword>
+    <proxyHost/>
+    <proxyPort/>
+    <preemptive>N</preemptive>
+    <trustStoreFile/>
+    <trustStorePassword>Encrypted </trustStorePassword>
+    <headers>
+      </headers>
+    <parameters>
+      </parameters>
+    <matrixParameters>
+      </matrixParameters>
+    <result>
+      <name>_result</name>
+      <code>_code</code>
+      <response_time>_time</response_time>
+      </result>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>477</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
       </GUI>
     </step>
 
